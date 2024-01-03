@@ -1,0 +1,110 @@
+<html>
+<head>
+
+<!-- random seed script.  don't worry about it. -->
+
+<script>
+	
+function R(n) {
+	seed = (0x015a4e35 * seed) % 0x7fffffff;
+	return (seed >> 16) % n;
+}
+
+var now = new Date();
+var seed = now.getTime() % 0xffffffff;
+
+//adds randomized transform css
+var css = "a:hover img { transform: translate(100%," + (R(20)-10) + "%) skew(" + (R(40)-20) + "deg, " + (R(40)-20) + "deg);}";
+var style = document.createElement('style');
+if (style.styleSheet) {
+    style.styleSheet.cssText = css;
+} else {
+    style.appendChild(document.createTextNode(css));
+}
+document.getElementsByTagName('head')[0].appendChild(style);
+
+</script>
+
+<!-- end random seed script -->
+
+
+
+
+<!-- refresh code.  comment it out to turn off autorefreshing.  (R(2)+4) means "refresh either every 4 seconds or every 5 seconds" -->
+
+<!-- <script>
+document.write('<META HTTP-EQUIV="Refresh" CONTENT= "' + (R(2)+4) + '; URL=v.html">')
+</script> -->
+
+<!-- end refresh code -->
+
+<style>
+	body {
+		background-image: linear-gradient(blue, lightblue, white);
+	}
+
+	a img {
+		width: 50%;
+		filter: drop-shadow(2px 2px 6px white);
+		transition: transform 3s ease-in-out;
+	}
+</style>
+
+
+</head>
+
+<body>
+
+
+
+<!-- fullscreen background layer -->
+
+<div style="position: absolute; Z-INDEX: 1; left: 0px; top: 0px; height: 100%; width: 100%">
+
+<script>
+if (R(2) == 0)
+document.write ('<img src=' + R(10) +'.gif width=100% height=100%>')
+else
+document.write ('<img src=' + R(10) +'.gif width=100% height=100% style="transform: scaleX(-1);">')
+</script>
+
+</div>
+
+<!-- end fullscreen background layer -->
+
+
+
+
+<!-- tiling background layer.  R(10) means "pick an image from 0-9" -->
+
+<script>
+if (R(10) != 5) //made less likely b/c mirrored looks kinda weird
+document.write ('<div style="overflow:hidden; POSITION: absolute; Z-INDEX: 2; left: 0px; top: 0px; height: 100%; width: 100%; background-image: url(' + R(10) + '.gif);">')
+else
+document.write ('<div style="overflow:hidden; transform: scaleX(-1); POSITION: absolute; Z-INDEX: 2; left: 0px; top: 0px; height: 100%; width: 100%; background-image: url(' + R(10) + '.gif);">')
+</script>
+
+
+
+<!-- centered image 12% off top of page. -->
+
+
+<SCRIPT>
+if (R(2) == 0)
+document.write ('<a href="v.html"><div style="transform: scaleX(-1)"><img src=' + R(10) + '.gif border=0></div></a>')
+else
+document.write ('<a href="v.html"><div><img src=' + R(10) + '.gif border=0></div></a>')
+</script>
+
+
+<!-- end centered image -->
+
+
+</div>
+
+<!-- end tiling background layer -->
+
+
+
+</body>
+</html>

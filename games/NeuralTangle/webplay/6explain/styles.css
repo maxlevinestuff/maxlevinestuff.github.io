@@ -1,0 +1,49 @@
+@font-face {
+	font-family: handwritten;
+	src: url(../1artbook/maxhandwriting.ttf);
+}
+
+body {
+	background-image: url("images/black.jpg");
+}
+
+#center-text {
+	max-width: 1000px;
+	font-family: handwritten;
+	margin: 0 auto;
+	color: white;
+}
+
+h1 {
+	font-size: 50px;
+}
+
+p {
+	font-size: 35px;
+}
+
+ul {
+	font-size: 37px;
+}
+
+img {
+	margin: 25px;
+	border-color: white;
+	border-width: 50px;
+
+}
+
+a {
+	color: lightgrey;
+}
+
+iframe {
+	padding: 10px;
+}
+
+#videos {
+	margin-left: auto;
+	margin-right: auto;
+	width: 780px;
+	display: block;
+}

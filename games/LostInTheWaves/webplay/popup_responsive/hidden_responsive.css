@@ -1,0 +1,44 @@
+@font-face {
+  font-family: alien;
+  src: url('../alphabet/Visitor Script.ttf');
+}
+
+@media screen and (min-width: 0) and (max-width: 480px) {
+  p, h1, h2, #navbar a, .text-bar {
+    font-family: monospace;
+  }
+  .cross-out {
+    text-decoration: none;
+  }
+  .new-text {
+    display: none;
+  }
+}
+@media screen and (min-width: 480px) and (max-width: 1200px) {
+  p, h1, h2, #navbar a, .text-bar {
+    font-family: alien;
+  }
+  .cross-out {
+    text-decoration: line-through;
+  }
+  .new-text {
+    display: none;
+  }
+}
+@media screen and (min-width: 1200px) {
+  p, h1, h2, #navbar a, .text-bar {
+    font-family: alien
+  }
+  .cross-out {
+    text-decoration: line-through;
+    color: red;
+  }
+  .new-text {
+    display: unset;
+    font-family: monospace !important;
+    color: red !important;
+  }
+  img {
+  content: url("nightmare.gif");
+  }
+}

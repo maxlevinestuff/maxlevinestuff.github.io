@@ -1,0 +1,129 @@
+text {
+	color: black;
+}
+body {
+	background-image: radial-gradient(blue, lightblue);
+	background-color: black;
+}
+h1 {
+	font-size: 40pt;
+	color: grey;
+	font-family: 'Beth Ellen', cursive;
+	text-align: center;
+}
+p {
+	font-size: 22pt;
+	font-family: 'Open Sans Condensed', sans-serif;
+	color: black;
+}
+
+div {
+	max-width: 900px;
+	width: 75%;
+
+	background-color: white;
+	opacity: 0.7;
+	color: #fff;
+	margin: 0 auto;
+	padding: 45px;
+	border-radius: 25px;
+	border-style: outset;
+	border-width: 5px;
+}
+a {
+	text-decoration: none;
+	font-size: 22pt;
+	font-family: 'Open Sans Condensed', sans-serif;
+	color: black;
+}
+a:hover {
+	color: grey;
+}
+
+#options{
+	margin-top: 15px;
+	text-align: center;
+}
+#centered-art {
+	1
+}
+
+.dot {
+  background-color: white;
+  border-radius: 50%;
+  position: fixed;
+
+    z-index: -99;
+}
+#upper-left {
+	    height: 100px;
+  width: 100px;
+  line-height: 100px;
+    top: 5%;
+    left: 5%;
+    animation-duration: 2s;
+}
+#upper-right {
+	    height: 200px;
+  width: 200px;
+  line-height: 200px;
+    top: 5%;
+    right: 5%;
+    animation-duration: 4s;
+}
+#lower-left {
+	    height: 50px;
+  width: 50px;
+  line-height: 50px;
+    bottom: 5%;
+    left: 5%;
+    animation-duration: 1s;
+}
+#lower-right {
+	    height: 120px;
+  width: 120px;
+  line-height: 120px;
+    bottom: 5%;
+    right: 5%;
+    animation-duration: 1.5s;
+}
+
+ /* gradient background */
+
+@keyframes lightning {
+	0% {
+		opacity: 0.5;
+	}
+	50% {
+		opacity: 1.0;
+	}
+	100% {
+		opacity: 0.5;
+	}
+}
+#upper-left, #upper-right, #lower-left, #lower-right {
+	background-color: white;
+	animation-name: lightning;
+	animation-iteration-count: infinite;
+
+	text-align: center;
+	color: grey;
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-style: italic;
+	font-size: 16px;
+}
+
+/* Dashed border */
+hr.dashed {
+  border-top: 3px dashed white;
+}
+
+/* Dotted border */
+hr.dotted {
+  border-top: 3px dotted #bbb;
+}
+
+/* Solid border */
+hr.solid {
+  border-top: 3px solid #bbb;
+}

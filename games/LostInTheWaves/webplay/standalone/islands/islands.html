@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Draw a brain</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="shortcut icon" type="image/png" href="0resources/favicon.png"/>
+</head>
+
+<body>
+<div class="row">
+  <div class="column-inactive">
+    <iframe src="bubblegum/index.html" height="100%" width="100%" title="Iframe Example"></iframe>
+  </div>
+  <div class="column-inactive">
+    <iframe src="1.html" id="net" height="100%" width="100%" title="Iframe Example"></iframe>
+  </div>
+</div>
+
+<script>
+  function formChanged() {
+    document.getElementById("net").contentWindow.addPoint();
+  }
+</script>
+
+</body>

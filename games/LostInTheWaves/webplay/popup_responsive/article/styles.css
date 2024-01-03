@@ -1,0 +1,91 @@
+body {
+  margin: 0 auto;
+}
+
+img {
+  width: 60%;
+  margin: 10px;
+}
+
+#pass {
+  color: red;
+}
+
+
+/* Navbar */
+/* Style the navbar */
+#navbar {
+    overflow: hidden;
+    background-color: black;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Navbar links */
+#navbar a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 10px;
+    text-decoration: none;
+    font-family: cream_2;
+}
+
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+    #article {
+      margin: 40px;
+      font-size: 1em;
+      font-family: sans-serif;
+    }
+
+@media screen and (min-width: 0) and (max-width: 480px) {
+  #article {
+    columns: 1;
+    font-family: monospace;
+  }
+}
+@media screen and (min-width: 480px) and (max-width: 1200px) {
+  #article {
+    columns: 2;
+    font-family: serif;
+  }
+}
+@media screen and (min-width: 1200px) {
+  #article {
+    columns: 3;
+    font-family: sans-serif;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+p {
+    font-size: 1.1em;
+}
+h1 {
+  font-size: 2.3em;
+  font-family: sans-serif;
+  text-align: center;
+  padding: .3em;
+}
+h2 {
+  font-size: 1.6em;
+  font-family: sans-serif;
+}

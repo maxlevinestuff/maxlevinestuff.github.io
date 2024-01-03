@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Wax fruit</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="styles.css">
+	<link rel="shortcut icon" type="image/png" href="../0resources/favicon.png"/>
+</head>
+
+<body id="body">
+
+	<audio src="scary.mp3" id="louder" loop></audio>
+
+	<script>
+
+		var current = 0;
+		var loadsLeft = 0;
+		function change() {
+
+			if (loadsLeft > 0)
+				return;
+
+			current++;
+
+			if (current == 1) {
+				
+				//set new background
+
+				loadsLeft = 5;
+				
+				var imageUrl = "scribbles.jpg";
+				let bgElement = document.querySelector("body");
+				let preloaderImg = document.createElement("img");
+				preloaderImg.src = imageUrl;
+				preloaderImg.addEventListener('load', (event) => {
+					document.getElementById("body").style.backgroundSize = "auto 100%";
+					document.getElementById("body").style.backgroundPosition = "100% 0";
+					document.getElementById("body").style.animation = "animatedBackground 22s linear infinite alternate";
+				    bgElement.style.backgroundImage = `url(${imageUrl})`;
+				    preloaderImg = null;
+				    loadsLeft--;
+				});
+
+				var imageUrl1 = "second/1.jpeg";
+				let preloaderImg1 = document.createElement("img");
+				preloaderImg1.src = imageUrl1;
+				preloaderImg1.addEventListener('load', (event) => {
+				    document.getElementById("1").src = imageUrl1;
+				    preloaderImg1 = null;
+				    loadsLeft--;
+				});
+
+				var imageUrl2 = "second/2.jpeg";
+				let preloaderImg2 = document.createElement("img");
+				preloaderImg2.src = imageUrl2;
+				preloaderImg2.addEventListener('load', (event) => {
+				    document.getElementById("2").src = imageUrl2;
+				    preloaderImg2 = null;
+				    loadsLeft--;
+				});
+
+				var imageUrl3 = "second/3.jpeg";
+				let preloaderImg3 = document.createElement("img");
+				preloaderImg3.src = imageUrl3;
+				preloaderImg3.addEventListener('load', (event) => {
+				    document.getElementById("3").src = imageUrl3;
+				    preloaderImg3 = null;
+				    loadsLeft--;
+				});
+
+				var imageUrl4 = "second/4.jpeg";
+				let preloaderImg4 = document.createElement("img");
+				preloaderImg4.src = imageUrl4;
+				preloaderImg4.addEventListener('load', (event) => {
+				    document.getElementById("4").src = imageUrl4;
+				    preloaderImg4 = null;
+				    loadsLeft--;
+				});
+
+				document.getElementById("louder").volume = .2;
+				document.getElementById("louder").play();
+
+			} else if (current == 2) {
+
+				let bgElement = document.querySelector("body");
+
+				var imageUrl1 = "third/1.jpg";
+				let preloaderImg1 = document.createElement("img");
+				preloaderImg1.src = imageUrl1;
+				preloaderImg1.addEventListener('load', (event) => {
+				    document.getElementById("1").src = imageUrl1;
+				    preloaderImg1 = null;
+				    incrementNumLoaded();
+				});
+
+				var imageUrl2 = "third/2.jpg";
+				let preloaderImg2 = document.createElement("img");
+				preloaderImg2.src = imageUrl2;
+				preloaderImg2.addEventListener('load', (event) => {
+				    document.getElementById("2").src = imageUrl2;
+				    preloaderImg2 = null;
+				    incrementNumLoaded();
+				});
+
+				var imageUrl3 = "third/3.jpg";
+				let preloaderImg3 = document.createElement("img");
+				preloaderImg3.src = imageUrl3;
+				preloaderImg3.addEventListener('load', (event) => {
+				    document.getElementById("3").src = imageUrl3;
+				    preloaderImg3 = null;
+				    incrementNumLoaded();
+				});
+
+				var imageUrl4 = "third/4.jpg";
+				let preloaderImg4 = document.createElement("img");
+				preloaderImg4.src = imageUrl4;
+				preloaderImg4.addEventListener('load', (event) => {
+				    document.getElementById("4").src = imageUrl4;
+				    preloaderImg4 = null;
+				    incrementNumLoaded();
+				});
+
+				document.getElementById("louder").currentTime = 0;
+				document.getElementById("louder").volume = 1;
+
+			}
+		}
+
+		var numLoaded = 0;
+		function incrementNumLoaded() {
+			numLoaded++;
+			if (numLoaded == 4) {
+				window.setTimeout(nextPage, 2000);
+			}
+		}
+
+		function nextPage() {
+			window.location.replace('../3loopagain/loopagain.html');
+		}
+
+	</script>
+
+
+	
+	<img onclick="change()" id="1" src="unedited/1.jpg">
+	<img onclick="change()" id="2" src="unedited/2.jpg">
+	<img onclick="change()" id="3" src="unedited/3.jpg">
+	<img onclick="change()" id="4" src="unedited/4.jpg">
+
+
+</body>
+
+</html>

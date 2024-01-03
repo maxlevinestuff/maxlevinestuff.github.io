@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Draw a brain</title>
+  <link rel="stylesheet" href="frame/frame.css">
+      <script src="frame/frame.js"></script>
+      <script>
+        function start() {
+    loadSelf("plain/plain.html?content=content/SiB.txt&clearStatic=true");
+    loadAndWaitAndThenLoadSelf(["alphabet/alphabet.html?content=The singularity&clearStatic=true", "scanner/scanner.html", "plain/plain.html?content=content/entropy_link.txt&clearStatic=true", "plain/plain.html?content=content/bostrom2.txt&clearStatic=true"], false, "20%, 60%, 10%, 20%");
+}
+
+  </script>
+</head>
+
+<frameset onload="start()" id="main" rows="*" cols="*" border=0 framespacing=0 frameborder=no>
+</frameset>

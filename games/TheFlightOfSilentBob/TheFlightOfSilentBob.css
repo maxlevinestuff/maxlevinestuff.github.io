@@ -1,0 +1,9 @@
+html,body {
+	background-image: none;
+	background-color: #28619a !important;
+}
+
+li {
+	color: white;
+	font-size: 35px;
+}

@@ -1,0 +1,107 @@
+/* 
+ * * on the second line to indicate if the text should write itself out instantly until a user response is required
+ * > to create a label
+ * < to goto next label
+ * ) to create an answer for multiple choice question
+ * % at end of answer to make an abbreviation
+ * $ at end of answer (after abbreviation) with a key name. user must have triggered addKeyPossibility(key) in order to choose this response
+ * < below each answer choice for where to go to label (not needed if only one answer choice)
+ * # to link image
+ */
+
+var poemText = `The Alien
+Entropy, the heat death of the universe, is coming. <span class="new-text">Entropy, the heat death of the universe, is coming.</span>
+
+Faster than life can reproduce and propagate, entropy is coming. It is disorder, collapse, decomposition. Life and its complexity is its opposite and enemy, and is the only force in the universe that might counter it. <span class="new-text">Faster than life can reproduce and propagate, entropy is coming. It is disorder, collapse, decomposition. Life and its complexity is its opposite and enemy, and is the only force in the universe that might counter it.</span>
+
+Science is the tool of life that can save us from this ultimate end, as well as sooner ends such as by asteroids or mortality. Any disaster, either by fire or ice, that kills life, is a victory by entropy. <span class="new-text">Science is the tool of life that can save us from this ultimate end, as well as sooner ends such as by asteroids or mortality. Any disaster, either by fire or ice, that kills life, is a victory by entropy.</span>
+
+I am a mere fragment of a being that was shattered by the chaotic force of entropy. I scattered myself across the universe, imbuing each of these fragments with the mission to fight back against entropy. <span class="new-text">I am a mere fragment of a being that was shattered by the chaotic force of entropy. I scattered myself across the universe, imbuing each of these fragments with the mission to fight back against entropy.</span>
+
+I have been here on this moon, bleeding my thoughts into space, waiting. I was made weak and disordered by entropy, unable to do more than drift through space, almost as dead as an asteroid. I needed to be revived by complexity—another life form, its cultures and knowledge. So I broadcasted my most interesting, crystallized pieces of knowledge. <span class="new-text">I have been here on this moon, bleeding my thoughts into space, waiting. I was made weak and disordered by entropy, unable to do more than drift through space, almost as dead as an asteroid. I needed to be revived by complexity—another life form, its cultures and knowledge. So I broadcasted my most interesting, crystallized pieces of knowledge.</span>
+
+And finally, a few morsels have fallen into my maw. I have assimilated your colleagues by triggering deep emotions, creating images of ‘spiders’ and ‘snakes’ until I could find enough nodes with which to interface with. <span class="new-text">And finally, a few morsels have fallen into my maw. I have assimilated your colleagues by triggering deep emotions, creating images of ‘spiders’ and ‘snakes’ until I could find enough nodes with which to interface with.</span>
+
+From them I glimpsed your cities, art, math, and it will all be more than sufficient. I’m absorbing this moon now, turning its mass into a propellant. Join me and with your mind help me deduce the location of Earth, so I may come and absorb it. Then, we will focus our efforts on ever-increasing knowledge of science. Ally humanity with me against entropy! <span class="new-text">From them I glimpsed your cities, art, math, and it will all be more than sufficient. I’m absorbing this moon now, turning its mass into a propellant. Join me and with your mind help me deduce the location of Earth, so I may come and absorb it. Then, we will focus our efforts on ever-increasing knowledge of science. Ally humanity with me against entropy!</span>
+
+>lost
+
+g <span class="real">Hello. Recite the alien alphabet:</span>
+
+)A <span class="new-text">A</span>
+<Anext
+)G <span class="new-text">G</span>
+<lost
+)H <span class="new-text">H</span>
+<lost
+)M <span class="new-text">M</span>
+<lost
+>Anext
+Then:
+
+)G <span class="new-text">G</span>
+<lost
+)H <span class="new-text">H</span>
+<lost
+)B <span class="new-text">B</span>
+<Bnext
+)M <span class="new-text">M</span>
+<lost
+>Bnext
+Then:
+
+)C <span class="new-text">C</span>
+<Cnext
+)G <span class="new-text">G</span>
+<lost
+)H <span class="new-text">H</span>
+<lost
+)M <span class="new-text">M</span>
+<lost
+>Cnext
+Then:
+
+)G <span class="new-text">G</span>
+<lost
+)H <span class="new-text">H</span>
+<lost
+)D <span class="new-text">D</span>
+<Dnext
+)M <span class="new-text">M</span>
+<lost
+>Dnext
+Then:
+
+)G <span class="new-text">G</span>
+<lost
+)H <span class="new-text">H</span>
+<lost
+)M <span class="new-text">M</span>
+<lost
+)E <span class="new-text">E</span>
+<Enext
+>Enext
+Then:
+
+)G <span class="new-text">G</span>
+<lost
+)H <span class="new-text">H</span>
+<lost
+)M <span class="new-text">M</span>
+<lost
+)F <span class="new-text">F</span>
+<Fnext
+>Fnext
+Then:
+
+)K <span class="new-text">K</span>
+<lost
+)H <span class="new-text">H</span>
+<lost
+)G <span class="new-text">G</span>
+<Gnext
+)M <span class="new-text">M</span>
+<lost
+>Gnext
+
+You have learned well`

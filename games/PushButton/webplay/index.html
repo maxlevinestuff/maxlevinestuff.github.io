@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Push Button</title>
+	<meta charset="UTF-8">
+<style>
+	body {
+		background-color: #e6ffee;
+	}
+	#image-div{
+		width: 756px;
+		height: 328px;
+		background-size: cover;
+		background-color: white;
+        /*replace the .png file below with your initial image/gif filename*/
+		background-image: url('button2.png');
+		margin: 0 auto;
+        cursor: pointer;
+
+        position: relative;
+        right: -26px;
+
+        background-color: #e6ffee;
+	}
+	#text-output {
+		border-style: inset;
+		width: 50%;
+		margin: 0 auto;
+
+		background-color: white;
+	}
+	p{
+		font-family: 'VT323', monospace;
+		font-size: 30pt;
+	}
+	#content{
+  		text-align: center;
+	}
+	.close-to-button {
+		position: relative;
+		bottom: -10px;
+	}
+	#white-space {
+		margin-bottom: 80px;
+	}
+	a {
+		font-family: 'VT323', monospace;
+		color: black;
+		display: none;
+	}
+</style>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+</head>
+<body>
+<div id="content">
+<!--change or delete this header to reflect your content-->
+<p id="score" class="close-to-button"></p>
+<p id="press-intensity"></p>
+
+<div onmousedown="pressDown()" onmouseup="release()" onmouseout="release()" id="image-div"></div>
+
+<!--delete the text below-->
+<p id="white-space"></p>
+<p id="text-output"></p>
+
+<a id="about" href="about.html"><br>about</a>
+
+</div>
+<script>
+
+var isPushed = false;
+
+var pressIntensity = 0;
+var isBroke = false;
+setInterval(function(){ 
+    if (pressIntensity > 0 && !isBroke) {
+    	pressIntensity -= 1;
+    	if (dialogueNum >= 75)
+    		document.getElementById('press-intensity').innerHTML = "press intensity: " + pressIntensity + "/50";
+    }
+}, 420);
+
+var dialogueNum = 0;
+
+let dialogue = [
+"Hi there! Please push the button!",
+"Yeah! Do it again!",
+"Thanks do it more!",
+"Again!",
+"I like it when you push the button. Do it again!",
+"Maybe you're wondering who I am. I can tell you, but press the button again.",
+"I am a creature that lives on this page. Press!",
+"When you press the button, I get a shot of dopamine. So do it again!",
+"What? Why are you looking at the button like that?",
+"Just keep pressing the button!",
+"My entire existence revolves around the pressing of this button.",
+"So do me a favor and press it more please!",
+"Soon you will be gone, and leave this page behind, and I'll have to wait for a new visitor.",
+"So keep pressing it while you're still here!",
+"Press it again!",
+"Press it more!",
+"\"Is it right?\", you may be wondering. \"Is this a thing I should be doing?\"",
+"And the answer is yes!",
+"It is a bit sad though, I agree...",
+"...To be addicted to exercising! Can you feel the burn in your hand from pressing the button?",
+"Press the button more!",
+"This reminds me of an experiment done on rats...",
+"(I found an article about it, y'know, being a website and all.)",
+"The rats had a button that they could press to recieve morphine.",
+"And they would do nothing but press the button until they died.",
+"Anyway, I forgot what the moral of that story was.",
+"Maybe it was that buttons are universally great, even rats agree.",
+"So keep pressing the button for all those rats out there, and for me.",
+"More press!",
+"Press more!",
+"To motivate you to press more, I put a score up!",
+"It shows how many times you have pressed the button.",
+"Doesn't it make you want to get that number up really high?",
+"Like, maybe in the 10, 11, *cough* 120,000 range or something like that?",
+"It would be so cool if you could get the number that high.",
+"If you start now, you could probably get there in a few hours.",
+"I did the math, and if you were to press it 1 time every second for 90,000 seconds, you could get the score to 90,000.",
+"90,000 seconds is 24 hours, by the way.",
+"Sounds like a great way to spend an entire day, in my opinion.",
+"Oh wait, I remember the rest of the rat park experiment...",
+"I need some time to think. In the meantime, why not get the score up to 50?",
+"...9 more presses...",
+"...8 more presses...",
+"...7 more presses...",
+"...6 more presses...",
+"...5 more presses...",
+"...4 more presses...",
+"...3 more presses...",
+"...2 more presses...",
+"...1 more press...",
+"I'm having...a revelation. There was another group of rats...",
+"They had a park to run around in, and they didn't use the morphine at all.",
+"For old time's sake, why not press the button until score 75, then I'll try something...",
+"...22 more presses...",
+"...21 more presses...",
+"...20 more presses...",
+"...19 more presses...",
+"...18 more presses...",
+"...17 more presses...",
+"...16 more presses...",
+"...15 more presses...",
+"...14 more presses...",
+"...13 more presses...",
+"...12 more presses...",
+"...11 more presses...",
+"...10 more presses...",
+"...9 more presses...",
+"...8 more presses...",
+"...7 more presses...",
+"...6 more presses...",
+"...5 more presses...",
+"...4 more presses...",
+"...3 more presses...",
+"...2 more presses...",
+"...1 more press...",
+"Okay, I have a plan. If you click enough, you might be able to break me out of here...",
+"You just have to get the press intensity to 50."
+];
+
+document.getElementById('text-output').innerHTML = dialogue[0];
+
+/*replace the .wav file below with your sound filename:*/
+var audioPress = [new Audio('press.wav'), new Audio('press.wav'), new Audio('press.wav'), new Audio('press.wav'), new Audio('press.wav'), new Audio('press.wav')];
+var audioRelease = [new Audio('release.wav'), new Audio('release.wav'), new Audio('release.wav'), new Audio('release.wav'), new Audio('release.wav'), new Audio('release.wav')]
+var shatter = new Audio('shatter.wav');
+
+/*replace the .gif file below with your second image/gif filename:*/
+function pressDown() {
+	if (!isBroke) {
+		dialogueNum += 1;
+		pressIntensity += 1;
+		pressSound();
+		document.getElementById('image-div').style.backgroundImage = "url('button1.png')";
+		pushed = true;
+		if (dialogueNum >= 77)
+			document.getElementById('text-output').innerHTML = "You just have to get the press intensity to 50. Press a lot!";
+		else
+			document.getElementById('text-output').innerHTML = dialogue[dialogueNum];
+		if (dialogueNum >= 30)
+			document.getElementById('score').innerHTML = "score: " + dialogueNum;
+		if (dialogueNum == 75) {
+			pressIntensity = 0;
+			document.getElementById("press-intensity").classList.add('close-to-button');
+			document.getElementById("score").style.marginBottom = "-35px";
+		}
+		if (dialogueNum >= 75)
+			document.getElementById('press-intensity').innerHTML = "press intensity: " + pressIntensity + "/50";
+		if (pressIntensity >= 50 && dialogueNum >= 75) {
+			shatter.play();
+			isBroke = true;
+			pushed = false;
+			document.getElementById('press-intensity').innerHTML = "press intensity: 50/50";
+			document.getElementById('image-div').style.backgroundImage = "url('buttonBroke.png')";
+			document.getElementById('text-output').innerHTML = "Yay! I'm finally free! Thank you.";
+			document.getElementById('about').style.display = "block";
+		}
+	}
+}
+
+function release() {
+	if (!isBroke) {
+		if (pushed)
+			releaseSound();
+		pushed = false;
+		document.getElementById('image-div').style.backgroundImage = "url('button2.png')";
+	}
+}
+
+var pressSoundNum = 0;
+function pressSound() {
+	audioPress[pressSoundNum].play();
+ pressSoundNum = (pressSoundNum + 1) % audioPress.length;
+}
+
+var releaseSoundNum = 0;
+function releaseSound() {
+	audioRelease[releaseSoundNum].play();
+	releaseSoundNum = (releaseSoundNum + 1) % audioRelease.length;
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Draw a brain</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="formPages.css">
+  <link rel="shortcut icon" type="image/png" href="0resources/favicon.png"/>
+  <meta charset="UTF-8">
+  <script src="../../frame/frame.js"></script>
+</head>
+
+<body style="height: 90%">
+
+<div class="text-col">
+
+<form id="form" action="10.html">
+
+  <p>Your data has been processed sucessfully. Your new consciousness will begin on our servers at <span id="time"></span>.</p>
+
+</form>
+
+</div>
+
+<script>
+  const queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
+  const product = urlParams.get('meeting-time')
+console.log(product);
+document.getElementById("time").innerHTML = product;
+
+parent.completeQuiz();
+  </script>
+
+</body>

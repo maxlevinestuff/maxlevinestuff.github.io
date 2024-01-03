@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Draw a brain</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="formPages.css">
+  <link rel="shortcut icon" type="image/png" href="0resources/favicon.png"/>
+</head>
+
+<body style="height: 90%">
+
+<div class="text-col">
+
+<form id="form" action="6.html">
+
+  <p>The following questions will determine your baseline mood. These will be used to determine the level of happiness or sadness to stimulate your consciousness with. It can range from ecstasy to horrible sadness, depending on how you answer.</p>
+
+  <p>What is the best number from 0 to 500?</p>
+  <input type="text" size="5">
+
+  <p>How many elephants are in your vicinity? (Webcam is on, no cheating)</p>
+      <input type="radio" name="el">3</input> <br>
+    <input type="radio" name="el">7</input> <br>
+          <input type="radio" name="el">100</input> <br>
+
+  <p>On one of the previous pages, please try to remember the 10 numbers that you answered with.</p>
+  <input type="text" size="5">
+  <input type="text" size="5">
+  <input type="text" size="5">
+  <input type="text" size="5">
+  <input type="text" size="5">
+  <input type="text" size="5">
+  <input type="text" size="5">
+  <input type="text" size="5">
+  <input type="text" size="5">
+  <input type="text" size="5">
+
+  <br>
+  <input type="submit" value="continue"/>
+
+</form>
+
+</div>
+
+<script>
+	document.getElementById("form").addEventListener('change', (event) => {
+  parent.formChanged();
+});
+</script>
+
+</body>

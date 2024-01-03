@@ -1,0 +1,36 @@
+hr {
+  display:block;
+  width: 100px;               
+  background-color:white;
+  height: 10px;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.date {
+  font-size: 40px;
+}
+
+p {
+  font-size: 30px;
+}
+
+.separator {
+  color: white !important;
+  width: 80% !important;
+  height: 10px !important;
+  margin: 0 auto !important;
+}
+
+.blog-links {
+  padding-top: 20px;
+}
+
+.blog-links * {
+  text-align: center;
+  color: white !important;
+  cursor: pointer;
+  font-size: 35px;
+}

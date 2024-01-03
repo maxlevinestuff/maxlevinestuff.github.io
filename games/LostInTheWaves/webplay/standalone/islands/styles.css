@@ -1,0 +1,60 @@
+html, body {
+  height: 100%;
+      margin:0;
+    padding:0;
+    background-color: black;
+    color: white;
+
+    font-size: 22px;
+}
+
+
+.row {
+  display: flex;
+  height: 100%;
+}
+
+.column-inactive {
+  flex: 50%;
+
+}
+
+a, a:hover, a:active, a:visited { color: white; }
+
+.text-col {
+  margin: 10px;
+}
+
+
+@media screen and (min-width: 0) and (max-width: 480px) {
+}
+@media screen and (min-width: 480px) and (max-width: 1200px) {
+.row {
+  display: unset;
+  height: unset;
+}
+
+.column-inactive {
+  flex: unset;
+  height: 50%;
+
+}
+}
+@media screen and (min-width: 1200px) {
+.row {
+  display: flex;
+  height: 100%;
+}
+
+.column-inactive {
+  flex: 50%;
+
+}
+}
+
+.column-inactive {
+  overflow: hidden;
+}
+iframe {
+  border: 0px;
+}

@@ -1,0 +1,36 @@
+/* 
+ * * on the second line to indicate if the text should write itself out instantly until a user response is required
+ * > to create a label
+ * < to goto next label
+ * ) to create an answer for multiple choice question
+ * % at end of answer to make an abbreviation
+ * $ at end of answer (after abbreviation) with a key name. user must have triggered addKeyPossibility(key) in order to choose this response
+ * < below each answer choice for where to go to label (not needed if only one answer choice)
+ * # to link image
+ */
+
+var poemText = `Tutorial Guy
+*
+So, for example, there are two responses below; option 1 will be visible by default, but you will only be able to see option 2 if addKeyPossibility("option 2") has succesfully been called in javascript. You can do so in the javascript console.
+
+And here is a test of a span: <span>this is inside a span</span>
+
+)I selected option 1, the boring option that anyone can easily get%option 1
+<option1
+)I went into javascript, enabled option 2, and selected it, because I'm cool%option 2$option 2
+<option2
+
+>option1
+Yeah, that was a freebie option. Would you like to go back and try to get option 2?
+)Yes
+<go back
+)No
+<end
+
+>option2
+Wow, good job, you dug around, found some info, and enabled this dialogue path.
+
+>end
+
+Okay, well that's it for this tutorial.
+Bye!`

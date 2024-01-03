@@ -1,0 +1,92 @@
+/* 
+ * Stuff to keep in mind:
+ * There are two images that appear at certain points: shadow gif and neural tangle
+ * User auto-replies "Who is this?"
+ *	(See main js for timing of those)
+ * Then, in here, there are a few points differing from original poem:
+ * 	There's a parenthetical note saying you can skip by saying bye
+ *	There's an actual link to the fake fruit story
+ *	And at the end, it says thanks for listening, bye, and gives link to next page
+ */
+
+var poemText = `//0: which player's turn
+    public IEnumerator PlayerTurnStart(int[] parms)
+    {
+        control.animationFragmentHandler.startingCoroutine();
+        control.getLastClicked(); //clear input
+        control.requestInputHandler.boughtAnything = false;
+        control.requestInputHandler.RequestInput((control.requestInputHandler.AllowedToEnterShop(parms[0])) ? Input.TurnStart : Input.TurnStartNoShop, parms[0]);
+        string input = null;
+        string inputType = null;
+        bool ready = false;
+        while (!ready)
+        {
+            yield return null;
+            input = control.getLastClicked();
+            if (input != null)
+            {
+                inputType = input.Substring(1);
+                if (input == "dice")
+                {
+                    ready = true;
+                    control.animationFragmentHandler.EnqueueFragmentFront(DrawColorCard, new int[] { parms[0] });
+                    control.animationFragmentHandler.EnqueueFragmentFront(BoardEvent, new int[] { parms[0] });
+                    control.animationFragmentHandler.EnqueueFragmentFront(WaitUntilDone, new int[] { }); //mostly for fire power
+                    control.animationFragmentHandler.EnqueueFragmentFront(MovePlayer, new int[] { 0, parms[0], -1, 0, 1, -1, parms[0], 1, -1, 0 });
+                    control.animationFragmentHandler.EnqueueFragmentFront(RollDice, new int[0]);
+                    control.wasJustInShop = false;
+                }
+                if (char.GetNumericValue(input[0]) == parms[0] && control.cardPiles.peekACard(input) > 0
+                    && (inputType != "fireflower" || !control.playerData[parms[0]].hasFireflowerPower) //cant use fireflower if already powered
+                    && (inputType != "star" || control.starUsable(control.playerData[parms[0]].boardPosition))) //cant use star if not usable
+                {
+                    ready = true;
+                    control.animationFragmentHandler.EnqueueFragmentFront(PlayerTurnStart, new int[] { parms[0] });
+                    if (inputType == "coin")
+                    {
+                        if (!control.changingShop)
+                        {
+                            control.animationFragmentHandler.EnqueueFragmentFront(ShopStart, new int[] { parms[0] });
+                            control.animationFragmentHandler.EnqueueFragmentFront(WaitUntilDone, new int[] { }); //added this to prevent buggy card extending while recieving (and in ShopStart)
+                            control.animationFragmentHandler.EnqueueFragmentFront(SetupShop, new int[] { parms[0] }); //skip just this line for ai using shop
+                        } else
+                        {
+                            control.cardPiles.emptyPileSoundEffect(); //still need to decide if to keep this. also see identical situation in ShopStart
+                        }
+                    }
+                    else
+                    {
+                        //commenting this out could cause bugs, but makes powerups a lot faster,
+                        //still need to bug test more but seems to not cause bugs, probably fine!! just skips movecard
+                        //control.animationFragmentHandler.EnqueueFragmentFront(WaitUntilDone, new int[] { });
+                        switch (inputType)
+                        {
+                            case "redmushroom":
+                                if (control.playerData[parms[0]].boardPosition == 16 && control.cardPiles.peekACard(parms[0] + "star") > 0 && control.cardPiles.peekACard("sredmushroom") == 0)
+                                    control.animationFragmentHandler.EnqueueFragmentFront(WaitUntilDone, new int[] { }); //need to wait until redmush reaches shop in this specific case, as it affects whether star is usable
+                                control.animationFragmentHandler.EnqueueFragmentFront(RedMushroom, new int[] { parms[0] });
+                                break;
+                            case "bluemushroom":
+                                control.animationFragmentHandler.EnqueueFragmentFront(BlueMushroom, new int[] { parms[0] });
+                                break;
+                            case "fireflower":
+                                control.animationFragmentHandler.EnqueueFragmentFront(Fireflower, new int[] { parms[0] });
+                                break;
+                            case "star":
+                                control.animationFragmentHandler.EnqueueFragmentFront(Star, new int[] { parms[0] });
+                                break;
+                            case "blooper":
+                                control.animationFragmentHandler.EnqueueFragmentFront(Blooper, new int[] { parms[0] });
+                                break;
+                        }
+                        control.animationFragmentHandler.EnqueueFragmentFront(MoveCard,
+                            new int[] { BoardData.getCardByString(input), BoardData.getCardByString("s" + inputType), 2 });
+                        control.wasJustInShop = false;
+                    }
+                }
+            }
+        }
+        control.requestInputHandler.CloseInput();
+        control.animationFragmentHandler.StartNext();
+        control.animationFragmentHandler.endingCoroutine();
+    }`

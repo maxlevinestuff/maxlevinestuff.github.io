@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Draw a brain</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="formPages.css">
+  <link rel="shortcut icon" type="image/png" href="0resources/favicon.png"/>
+</head>
+
+<body style="height: 90%">
+
+<div class="text-col">
+
+<form id="form" action="3.html">
+   <p>Look into the generic brain static signature (right) for 20 seconds.</p>
+  <p>Can you see yourself?</p>
+    <input type="radio" name="see">Yes</input>
+    <input type="radio" name="see">Not yet</input>
+  <p>Your core loop and affective neural net is built as you complete the survey and is visualized for you on the right. That's you!</p>
+  <p>Look into the personalized brain static signature (right) for 30 seconds. Then write down the first 10 numbers that come to mind.</p>
+  <input type="text" size="5">
+  <input type="text" size="5">
+  <input type="text" size="5">
+  <input type="text" size="5">
+  <input type="text" size="5">
+  <input type="text" size="5">
+  <input type="text" size="5">
+  <input type="text" size="5">
+  <input type="text" size="5">
+  <input type="text" size="5">
+
+  <p>If you had to have a limb amputated, it would be</p>
+  <select name="cars" id="cars">
+    <option value="left arm">left arm</option>
+    <option value="right arm">right arm</option>
+    <option value="left leg">left leg</option>
+    <option value="right leg">right leg</option>
+    <option value="head">head</option>
+    <option value="all of the above">all of the above</option>
+  </select>
+
+  <br>
+  <input type="submit" value="continue"/>
+
+</form>
+
+</div>
+
+<script>
+  alert("Please accept the dialogue box. This will enable the camera and mic so we can see you.");
+
+	document.getElementById("form").addEventListener('change', (event) => {
+  parent.formChanged();
+});
+</script>
+
+</body>

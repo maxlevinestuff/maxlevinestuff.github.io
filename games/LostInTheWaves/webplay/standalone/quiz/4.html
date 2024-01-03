@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Draw a brain</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="formPages.css">
+  <link rel="shortcut icon" type="image/png" href="0resources/favicon.png"/>
+</head>
+
+<body style="height: 90%">
+
+<div class="text-col">
+
+<form id="form" action="5.html">
+
+  <p>How do you feel about your face?</p>
+      <input type="radio" name="face">I don't have one.</input> <br>
+    <input type="radio" name="face">It fits me perfectly.</input> <br>
+          <input type="radio" name="face">It looks a lot like me.</input> <br>
+    <input type="radio" name="face">It tastes funny.</input> <br>
+          <input type="radio" name="face">I've never seen it.</input> <br>
+
+  <p>Do you suffer from any of these ailments?</p>
+  <input type="checkbox" name="78">
+  <label for="78">Walking corpse syndrome</label> <br>
+    <input type="checkbox" name="90">
+  <label for="90">Comatose</label><br>
+    <input type="checkbox" name="245">
+  <label for="245">Legally declared dead</label><br>
+      <input type="checkbox" name="431">
+  <label for="431">Chronic wasting disease</label><br>
+
+  <br>
+  <input type="submit" value="continue"/>
+
+</form>
+
+</div>
+
+<script>
+	document.getElementById("form").addEventListener('change', (event) => {
+  parent.formChanged();
+});
+</script>
+
+</body>

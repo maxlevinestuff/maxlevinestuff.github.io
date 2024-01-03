@@ -1,0 +1,30 @@
+/* 
+ * Stuff to keep in mind:
+ * There are two images that appear at certain points: shadow gif and neural tangle
+ * User auto-replies "Who is this?"
+ *	(See main js for timing of those)
+ * Then, in here, there are a few points differing from original poem:
+ * 	There's a parenthetical note saying you can skip by saying bye
+ *	There's an actual link to the fake fruit story
+ *	And at the end, it says thanks for listening, bye, and gives link to next page
+ */
+
+var poemText = `Parasurama was the sixteenth avatar descended from Lord Vishnu. 
+His purpose was to rid the earth of the evil Kshatriya kings who
+strayed from the path of Dharma.  The story of Parasurama goes
+that a Kshatriya king named “Karttaviryarjuna,” was hunting in the woods when he
+stumbled across Parasurama’s house when Parasurama
+wasn’t home.  However, Parasurama’s father was home
+ and, as would be expected from a king’s subject, 
+ supplied him with food and shelter.  Karttaviryarjuna 
+ then saw Kamadhenu, the fabulous cow that grants all 
+ wishes.  Karttaviryarjuna stole the cow because he 
+ wanted her to himself.  When Parasurama came home 
+ to find out about this, he pursued the king and 
+ killed him.  Karttaviryarjuna’s son was told of his 
+ father’s death and took revenge by killing Parasurama’s 
+ father (Jamadagni).  Parasurama was angered by this and 
+ promised to kill all Kshatriyan kings.  He kept his 
+ promise and killed the kings not once but twenty-one 
+ times.  Parasurama’s power is his axe called Parasu, 
+ which he uses to destroy miscreants like the Kshatriya kings.`

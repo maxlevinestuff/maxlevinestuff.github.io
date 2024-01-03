@@ -1,0 +1,117 @@
+/* 
+ * * on the second line to indicate if the text should write itself out instantly until a user response is required
+ * > to create a label
+ * < to goto next label
+ * ) to create an answer for multiple choice question
+ * % at end of answer to make an abbreviation
+ * $ at end of answer (after abbreviation) with a key name. user must have triggered newEntryInDictionaryToChild(key) in order to choose this response
+ * $ at beginning of line to declare a new key name
+ * < below each answer choice for where to go to label (not needed if only one answer choice)
+ * # to link image
+ */
+
+var poemText = `Tutorial Guy
+*
+Hello, this is a brief walkthrough on how the branching text message system works.
+All you have to do is write line by line the text you want to appear.
+And there are a few special symbols:
+ * * on the second line to indicate if the text should write itself out instantly until a user response is required
+ * > to create a label
+ * < to goto label
+ * ) to create an answer for multiple choice question
+ * % at end of answer to make an abbreviation
+ * $ at end of answer (after abbreviation) with a key name. user must have triggered newEntryInDictionaryToChild(key) in order to choose this response
+ * $ at beginning of line to declare a new key name
+ * < below each answer choice for where to go to label (not needed if only one answer choice)
+ * # to link image
+Let's demonstrate how these work.
+First of all, the name of whoever is texting should be written on the first line.
+Second of all, you can put a * as the second line and all text before requiring a user response will load instantly, giving the appearance that they sent the texts some time ago and are waiting for your response. (Or you can choose to omit this.)
+Anyway, how are you today?
+)Good
+<Good
+)Bad
+<Bad
+
+>Good
+That's good!
+Glad your day is going well.
+<Part2
+>Bad
+That's too bad!
+Do something that makes you happy.
+<Part2
+
+>Part2
+The above is a simple example of how you can use multiple choices and gotos to create a branching story.
+You can also require a response from the user, even if there is only one answer choice, and you don't have to use multiple gotos, just a single ')'.
+)Like this?
+)Or this?
+Yeah, wasn't that simple?
+
+Look at this picture of the best pizza:
+#example image.jpg
+The user can also send images. Try it!
+
+)#example image.jpg
+
+You just sent me a picture of a pizza!
+You can also abbreviate the user's initial options, to be expanded when chosen.
+)Okay so that means I can turn a short answer like "Ok" into this really long answer apparently.%Ok
+Yeah like that. Wouldn't want to mislead the user into a different answer than they were expecting though.
+
+That's almost all there is to it.
+And feel free to use as many new lines as you need to segment/organize the story; they are always skipped over.
+
+Finally, for some advanced usage, you can use javascript to control if certain reponses are visible for the user. You can use this to simulate limited user knowledge.
+
+This is done by placing a $ at the end of a response (after the % for the abbreviation) with a key after. Then, in order for the user to choose that response, newEntryInDictionaryToChild(key) must be (or have been) called on the window, otherwise the option won't show up for the user, until this condition is met.
+
+>go back
+
+So, for example, there are two responses below; option 1 will be visible by default, but you will only be able to see option 2 if newEntryInDictionaryToChild("option 2") has succesfully been called in javascript. You can do so in the javascript console.
+
+)I selected option 1, the boring option that anyone can easily get%option 1
+<option1
+)I went into javascript, enabled option 2, and selected it, because I'm cool%option 2$option 2
+<option2
+
+>option1
+Yeah, that was a freebie option. Would you like to go back and try to get option 2?
+)Yes
+<go back
+)No
+<end
+
+>option2
+Wow, good job, you dug around, found some info, and enabled this dialogue path.
+
+>end
+
+You can also define new tag definitions without using javascript by simply placing them appropriately in your dialogue path. For example, try clicking on don't define below:
+
+>back
+
+)Don't define option 3
+<dont
+)Do define option 3
+<do
+
+>do
+Okay, I have placed the line "$option 3" in the dialogue path, which means that tag should be activated.
+$option 3
+>dont
+
+Now, there should be options below depending on what you picked:
+
+)Option 3 is available, since I clicked on it above$option 3
+<real end
+)Lemme go back and try to define option 3 again
+<back
+
+>real end
+
+You defined an option through dialogue and then were able to choose that option!
+
+Okay, well that's it for this tutorial.
+Bye!`

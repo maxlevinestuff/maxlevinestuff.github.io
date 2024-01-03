@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Draw a brain</title>
+  <link rel="stylesheet" href="frame/frame.css">
+      <script src="frame/frame.js"></script>
+      <script>
+        function start() {
+    //loadSelf("message/message.html?clearStatic=true&content=content/message.txt");
+    loadAndWait(["boot/boot.html?content=content/mario2.txt", "boot/boot.html?content=content/tard.txt"], false, "60%, 40%");
+}
+
+  </script>
+</head>
+
+<frameset onload="start()" id="main" rows="*" cols="*" border=0 framespacing=0 frameborder=no>
+</frameset>
