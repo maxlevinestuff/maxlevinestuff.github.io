@@ -41,24 +41,22 @@ h2 {
 a:link { text-decoration: none}
 
 .os-icon {
-	width: 5%;
+	width: 20px;
 }
 
 .game-description {
-	padding-left: 20px;
-	padding-right: 20px;
-
-	font-size: 20px;
+	font-size: 27px;
 
 	color: white;
 }
 
 .game-title {
 	color: white;
+	font-size: 35px;
 }
 
 .os-icons {
-	padding-bottom: 10px;
+	padding-bottom: 30px;
 }
 
 html,body {
