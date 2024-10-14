@@ -1,0 +1,44 @@
+/* 
+ * * on the second line to indicate if the text should write itself out instantly until a user response is required
+ * > to create a label
+ * < to goto next label
+ * ) to create an answer for multiple choice question
+ * % at end of answer to make an abbreviation
+ * $ at end of answer (after abbreviation) with a key name. user must have triggered addKeyPossibility(key) in order to choose this response
+ * < below each answer choice for where to go to label (not needed if only one answer choice)
+ * # to link image
+ */
+
+var poemText = `The President
+*
+The nation is on high alert due to the Earth being bombarded by an unsubstantiated amount of alpha waves.
+Dr. Abernathy, are you sure that your readings are correct?
+Hello?
+I have been informed of your disappearance.
+If you are out there and receive this, please respond.
+
+)I'm here.
+
+Dr. Abernathy? Is that you? It can't be!
+
+)Yes, I am Dr. Abernathy
+<Yes
+)No, I am not.
+<No
+
+>Yes
+I don't believe it.
+He is presumed dead.
+>No
+
+What are you doing sending me messages from his servers?
+
+)I was just walking through the desert, when suddenly the ground fell out from beneath me. I fell into a dark place and sprained my ankle. There's a bunch of junk here and strange contraptions. And there's this computer here that I booted up.%I don't know.
+
+Where are you?
+You have stumbled across something of national, or global rather, importance.
+I can make it worth your while to send me the location of the lab.
+
+)There isn't time anyway, everything will self-destruct in the next 10 minutes.%No
+
+You'll have to see what you can find.`

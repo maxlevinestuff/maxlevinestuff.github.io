@@ -1,0 +1,10 @@
+/*
+ * How to add links:
+ * Complete self:									<a href="javascript:IAmCompleted()">this link</a>
+ * Add dictionary definition:						<a href="javascript:DeclareInDictionary('option 2')">this link</a>
+ * Complete self AND add dictionary definition:		<a href="javascript:IAmCompletedAndDeclareInDictionary('option 2')">this link</a>
+ *
+ * Make redacted text: 								<span class='redacted'>redacted text</span>
+ */
+
+var text = `Some improvements in communications technologies— especially spoken language, but perhaps also cities, writing, and printing— could also be argued to have, individually or in combination, provided super-sized boosts, in the sense that if another innovation of comparable impact to our collective intellectual problem-solving capacity were to happen, it would result in <a href="javascript:IAmCompleted()">collective superintelligence</a>. [Bostrom]`

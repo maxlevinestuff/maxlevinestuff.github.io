@@ -1,0 +1,14 @@
+html,body {
+	    background: repeating-linear-gradient(
+  45deg,
+  #bec3e4,
+  #bec3e4 10px,
+  #d2d5ea 10px,
+  #d2d5ea 20px
+);
+}
+
+li {
+	color: white;
+	font-size: 35px;
+}

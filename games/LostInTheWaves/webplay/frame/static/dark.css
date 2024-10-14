@@ -1,0 +1,27 @@
+p {
+	padding: 0px;
+	margin: 0px;
+	color: lightgreen;
+	font-family: monospace;
+}
+
+body {
+	background-color: black;
+	margin: 0 auto;
+}
+
+canvas {
+	z-index: -1;
+	position: absolute;
+}
+
+#add-to-here {
+	z-index: 1;
+	position: absolute;
+	margin: 10px;
+}
+
+a {
+	text-decoration: none;
+	color: lightgreen;
+}

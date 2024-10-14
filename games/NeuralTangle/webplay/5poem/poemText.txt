@@ -1,0 +1,445 @@
+/* 
+ * Stuff to keep in mind:
+ * There are two images that appear at certain points: shadow gif and neural tangle
+ * User auto-replies "Who is this?"
+ *	(See main js for timing of those)
+ * Then, in here, there are a few points differing from original poem:
+ * 	There's a parenthetical note saying you can skip by saying bye
+ *	There's an actual link to the fake fruit story
+ *	And at the end, it says thanks for listening, bye, and gives link to next page
+ */
+
+var poemText = `I like the sunlight
+on my acne face and in my heart
+
+bleach your brain
+on the bleachers, on the activity bus, on the hiking trail
+say nothing for hours for days for years
+just sitting there thinkin’ of a big ‘ol oak tree
+reliving favorite moments
+think writing manifestos
+a culture developing
+
+guarded and shaped on all sides by monsters and invisible walls
+delusional fears
+invisible in the physical, but solid in the metaphysical
+
+leave the path and the monsters will dissolve
+climb the hill of rising action into the unknown
+and discover the true nature of the world
+(if you get tired of this conversation, you can just say bye)
+unfortunately, you can’t leave on purpose
+you must wait for a call—
+
+a pure expression of my subconscious
+and a syntactical story I wrote about <a href="../2wax/wax.html">wax fruit</a> predicted it all
+
+the summer I
+climbed a mountain
+descended a canyon
+and swam in the ocean
+friends and a light that never goes out
+present with the moment
+engaged with the world
+
+when I came home my house was small
+and empty
+filled with strange abstract shapes
+culture shock between logic and emotion
+the abstract and concrete
+doing what you want versus doing what you have to do
+
+idleness and pointless thinking blurs little ideas into big ones
+like love being a pat on the shoulder
+
+having a memory is only recalling the last time you recalled it
+memories of thoughts are even less reliable
+slight generalizations are useful, large are empty
+cold, dead and I am trapped with them
+don’t follow your heart
+
+everyone inert
+I am fiery radiant
+righteous outrage
+out of my shell
+Freudian slips the devil:
+I make up phrases and they think about them
+a magnet exerts force when moving and linearly independent
+all their eyes blue
+everything disgusts me
+when something isn’t moving, it is dead, part of the wasteland of the world
+I drink from the water fountain
+I am amazing
+
+Phaethon brought his chariot high
+Higher than lightning
+So he was struck down
+Not by the clouds
+But from himself, a ray
+Was the end of Phaethon’s day
+
+Lack of Empathy due to selfishness
+due to the false belief that Paradise exists
+and therefore you cannot enjoy every moment
+The resulting rigidization of human behavior is broken by a hero
+who falls into another world
+and through the analogy between two worlds—
+
+I can feel my mind is dissolving
+your only weakness is yourself
+respect, confidence, weakness, dominance, attack, defend
+idleness blurring your mind specific to unpleasant general
+making a mess of your mind
+
+FATAL ERROR
+The Fall
+
+yesterday I knew what everyone was thinking
+now I know that this is shrinking
+without the light of seeing through their eyes
+locked off and inactivated, unsaturated raisin
+body locking into a questionable position
+
+daydreaming of walking a highway away from this place
+I slam head on desk, eyes red
+I haven’t slept in weeks
+and again—
+
+they aren’t windows to the soul
+they are meat jelly
+when they are still enough, you can see
+gelatinous meat
+
+Winter
+spacey
+everything spacious already in sepia
+the mean and echoing air 
+None of what they’re saying is true
+Putting shit in my mouth
+I’m not that lazy
+Why are people so mean
+I don’t deserve this
+I didn’t do anything wrong
+I was so happy for you
+I love you
+Hurt the best one
+They don’t believe what they say you do
+Has nobody to be mean to
+Didn’t do anything wrong
+Stop
+I see them
+They’re here
+They don’t say anything
+They don’t say
+They don’t say
+They’re insane
+They’re insane!
+I’m a good person
+He was always the one
+He was always alone
+attacked by everyone
+undeserved oppression
+I can’t see anything clearly
+Winter
+Scatterbrain when those things are accepted on the surface to be true
+It’s the winter
+huddled like penguins
+It projects everyone’s hatred outward, and I without a group
+a cog is useless if it’s not part of a whole
+against a wall of screaming flesh
+everyone is the same person
+in a series of rooms they are talking and judging you
+People who attack on purpose are wrong
+you’re not worthless, they just want you to think that
+go with it, but be unaffected
+It’s the winter
+(the curse of subjective reality is that evidence morphs to match the hypothesis)
+Enjoy the winter while it lasts, fools!
+
+spirit crushed and into the machinery
+the left brain concerned with small things
+symbol shunting
+right brain with big ideas
+they don’t have to be in the same head
+
+the psychology class was building
+a brain out of Arduinos in the library
+no big deal, but people kept talking about it
+that’s not a computer said the librarian
+it’s a brain
+
+in the hospital they put freaks in my head
+it all occurred to me in one mortifying moment
+plastered all over the wall for me
+and the nothingness that it is going to be
+a cold mass in a grave
+which is not the fate of all minds
+jealousy for those who can transfer
+
+my brain
+out the window a desolate gravel roof
+and an assortment of pipes and boxes
+but the fan now broken renders the vent system useless
+only ignorance had kept them going
+
+the cross-hatches shading borders the darkest corners of our minds
+shadows
+he predicted a robotic claw holding my pen
+the poet who was a pirate
+
+in the dream book I found the hero with a thousand faces
+and in the dream I found her in a garden of hedges
+she whose happiness is inverse of mine
+sine and cosine
+I write two poems about winter
+one is nice
+the other is mean
+they both mean the same thing
+
+I am on my knees, take me from this place
+and they stare with blood pouring out
+not the red kind
+from the crevices, flowing down the skin
+
+the module transported us down, down
+his cologne, the way he moved his neck like a goat, his earrings
+you’re in charge now
+I didn’t know how to navigate this maze
+to reach that machine, a male womb, a second birth
+the metallic digital tones of beeping and booping mocked the idea
+
+once while measuring my pulse
+she kicked my foot
+sorry she squeaked
+my heartbeat leaped in excitement
+and then leaped again in fear
+as my pulse was measured wrong
+
+he walked circles around a table
+he had an overgrown beard
+soft moaning noises
+that’s what he likes to do they said
+he’s actually very intelligent they said
+but how would any outsider know?
+complexity could be the only metric
+and he was me, to some degree
+I watched him walking around that table on Thursdays
+A circle is the most perfect of shapes
+and it can be many sizes
+
+I drew a bundle of neurons in the dark without input
+hands shaking
+I went over it again with colored pencils, then pastels
+physical pain
+It was twisted red in perpetuity, cathexis
+Building box loom after box loom
+or something after something
+But surrounded by a network of blue
+A black chasm separating them
+
+connecting two separate neural networks:
+intricate and nontrivial
+takes years of careful work
+
+I considered these imaginary neurons
+splaying my fingers
+looking at them with fear
+and ironically pressing myself into the corner
+into the yellow wallpaper of that room
+
+drip drip creep creep
+goes the sink
+
+darkness separating me from any other soul
+an infinite chasm
+
+a locked door
+a window to look inside
+nothing inside
+just a blank white box
+
+my hands shake as I dry myself
+the snack that smiles back
+pop culture!
+
+I cant stop moving
+squirming
+running my hands along the walls
+touching everything
+I didn’t know it was akathisia
+I thought it was agony
+
+discovering illogic
+no longer blind to
+a new way of thinking, of hearing
+metaphors, synonyms
+try each combination, quickly
+attunement to this language most are born with
+they hear it instantly and laugh
+but never cross the two languages
+they’ll call you crazy
+even though they are in fact the crazy ones
+
+rhyming is cool
+alliteration is not
+
+at night they turn up the river’s current
+make it flow into my ears and out my mouth
+like a salmon
+until my voice breaks
+until I vomit
+it’s not fair
+nobody makes faces like that in real life
+we do rounds
+
+in the dark
+a girl comes into the room
+stands staring through her glasses
+
+start on the bottom rung
+Ladders on top of two cars
+find where the lines intersect
+out there it’s cold
+
+deprived of stimulus so that the brain begins to
+learn from static
+make meaningless connections
+a neural tangle, a neural jungle
+a type of malignant tumor
+containing bizarre and purposeless fantasies, daydreams, hallucinations
+just randomly connected neurons
+the discomfort manifests physically in bulging eyes
+
+outside my window way up high
+I can see my high school from here
+and a crane nearby
+showing me how long this intervention was developed
+three to four years
+to save me from this tumor
+a branching script, to contain me in, is not too complicated
+a hundred headphones, monitors, somewhere in these walls
+the world blanketed white, waiting for me now
+the traffic light outside the window is always green: go
+NOW
+This is your final chance
+Reach for the light that never goes out
+Or die soon
+
+In this facility
+Hidden sensors watch me
+Hidden speakers blast sounds at me
+Lasers control my movements
+Rewritten books and movies
+and only the world’s best selected actors are around me
+Choreographed
+every word they say
+every intonation
+suggests an otherworldly genius
+I am surrounded by perfect aliens
+State of the art
+It must have cost billions
+
+everyone is here
+they even brought myself as a young kid
+when I was young I was annoying
+I could control the weather with a black rock
+make it rain and make it sunny
+
+at night they turn up the river’s current
+I try to balance on a bed seemingly three feet wide
+precarious
+a growl comes from beneath it
+the river flows into my ears and out my mouth
+until my voice can reach out on its own
+
+until my vocal cords are fried
+every day is a new way to be stupid
+
+output nonsense at anyone who will listen
+scared of being alone
+and alone with these thoughts
+maybe they have a technology that connects us
+our minds to merge
+to draw in three dimensions
+who will save me
+bring me back to the present
+
+they are all are so much smarter
+double meaning and ambiguous
+the full extent of which
+I don’t understand until hours later
+decades later
+
+I only live half my life
+and I liked or didn’t like that book
+y’know just because of the title
+I read in a while
+it’s about
+I have good taste
+and I coulda’ helped the kid if I knew ‘m better
+moved me like ten times laughter
+terrified of turtles
+how’s it going?
+good god give you a treat
+if you make up your mind
+and less spinning, more winning
+trippy eight weeks
+we do rounds said the face
+never mind, never mind
+I got helled up
+I kept a list: some are its fine fungi terror joking upsetting anyway ketchup amazing know looser subculture alphabet crayons pastels understands ‘merica!
+need a break?
+why not think about a word in the dark?
+a strange aloof man whispered as he passed me, “a facet.”
+
+falling into a black hole
+what will happen to your soul?
+what will you be able to say?
+how much do you now, null, weigh?
+what this doesn’t mean
+is a blank of color in-between
+
+a black void
+a spotlight shining on
+a gang of monsters
+playing in my head
+my favorite memory on repeat
+
+and it all came crashing down on me
+in a single, terrifying moment
+as I lay there, feeling forces and sounds 
+a cosmic horror
+from the wall to my left
+in the room with the yellow wallpaper
+
+All these years later
+a nightmare here and there
+about a freak lying in an empty room
+wrapped in their own loose skin
+a library of sadness deep underground
+pale creatures in among the bookshelves
+straining my eyes
+a facility of handicapped people kept lined up in rows, their brains splayed vertically in boxes
+being trapped in a pit
+dreams of escaping
+
+as I fall asleep I can feel
+the texture and surface of a strange, mental object from my childhood, the nerves in my brain feel it rubbing into my mind
+a sphere of flowing water
+my forehead falling into
+feels staticy
+in a room overlooking the river
+pontoon boats
+and hear a voice repeating endlessly, that I can only tap into at the brink of sleep
+what is it? sounds like pure syntax
+if you listen a few seconds
+or it could be the otherworldly truths
+I’m capable of
+
+but it’s not as urgent now
+because the sunlight fills my heart with warmth
+I like the sunlight
+
+Anyway, thank you for listening
+bye
+<a href="../6explain/explain.html">here's a link</a>`

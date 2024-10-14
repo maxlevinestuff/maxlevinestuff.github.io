@@ -1,0 +1,14 @@
+
+
+        img {
+            padding: 20px;
+        }
+
+        .left-img {
+            float: left;
+                        margin: 5px;
+        }
+        .right-img {
+            float: right;
+                        margin: 5px;
+        }

@@ -1,0 +1,243 @@
+#add-options-to-here {
+	background-color: black;
+	margin: -3px;
+}
+#input {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+/* Navbar */
+/* Style the navbar */
+#navbar {
+	background-color: grey;
+
+	width: 100%;
+	position: fixed;
+	margin: auto;
+	top:0;
+
+	text-align: center;
+
+	padding: 3px;
+
+	display: block;
+
+	font-size: 25px;
+	color: white;
+}
+
+#window {
+	padding: 2.5%;
+	margin-top: 28px;
+}
+
+#form {
+	background-color: grey;
+
+  width: 100%;
+  position: fixed;
+  margin: auto;
+  bottom:0;
+
+  text-align: center;
+
+  padding: 3px;
+
+  display: block;
+
+  font-size: 25px;
+}
+
+body {
+	background-color: black;
+	padding: 0;
+	margin: 0;
+	font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+img {
+	border-radius: 25px;
+	width: 640px;
+}
+
+input {
+	width: 50%;
+	height: 26px;
+	font-size: 25px;
+	border-radius: 7px;
+	background-color: black;
+	color: white;
+}
+button {
+	background-color: #1982FC;
+	color: white;
+	border-radius: 7px;
+	font-size: 20px;
+	cursor: pointer;
+}
+.sidebar-option {
+	background-color: grey;
+	color: white;
+	border-radius: 7px;
+	font-size: 20px;
+	cursor: pointer;
+	text-align: center;
+	vertical-align: middle;
+}
+
+a {
+	color: blue;
+}
+
+.from {
+
+	background-color: grey;
+
+	color: white;
+
+	padding: 4px;
+
+	border-radius: 25px;
+
+	text-align: right;
+
+	font-size: 25px;
+
+	display: inline;
+}
+
+.to {
+
+	background-color: #1982FC;
+
+	color: white;
+
+	padding: 4px;
+
+	border-radius: 25px;
+
+	font-size: 25px;
+
+	display: inline;
+}
+
+.option {
+
+	background-color: #5BC236;
+
+	color: white;
+
+	padding: 4px;
+
+	border-radius: 25px;
+
+	font-size: 25px;
+
+	display: inline;
+
+	cursor: pointer;
+}
+
+.container-left {
+
+	padding: 8px 20px;
+
+	padding-left: 0;
+	padding-right: 0;
+
+	text-align: left;
+
+	width: 100%;
+}
+
+.container-right {
+
+	padding: 8px 20px;
+
+	padding-left: 0;
+	padding-right: 0;
+
+	text-align: right;
+
+
+	width: 100%;
+}
+
+.container-center {
+
+	padding: 5px;
+
+	padding-left: 0;
+	padding-right: 0;
+
+	text-align: center;
+
+
+	width: 100%;
+}
+
+img {
+	width: 40%;
+}
+
+.container-center img {
+	width: 10%;
+}
+
+.row {
+	display: flex;
+}
+.col1 {
+	background-color: darkgrey;
+	  font-size: 25px;
+  color: white;
+}
+.col1 h1 {
+	font-size: 30px;
+}
+.inside {
+		background-color: darkgrey;
+	  font-size: 25px;
+  color: white;
+}
+
+@media screen and (min-width: 0) and (max-width: 480px) {
+.col1 {
+	flex: 0%;
+	display: none;
+}
+.inside {
+	position: fixed;
+	width: 20%;
+}
+.col2 {
+	flex: 100%;
+}
+}
+@media screen and (min-width: 480px) and (max-width: 1200px) {
+.col1 {
+	flex: 0%;
+	display: none;
+}
+.inside {
+	position: fixed;
+	width: 20%;
+}
+.col2 {
+	flex: 100%;
+}
+}
+@media screen and (min-width: 1200px) {
+.col1 {
+	flex: 20%;
+}
+.inside {
+	position: fixed;
+	width: 20%;
+	height: 100%;
+}
+.col2 {
+	flex: 80%;
+}
+}

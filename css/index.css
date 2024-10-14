@@ -1,0 +1,19 @@
+
+p {
+
+    font-size: 40px;
+}
+
+.left-img {
+    width: 400px;
+}
+
+.right-img {
+    width: 400px;
+}
+
+a.text-link { text-decoration: none; color:white !important; }
+a.text-link:visited { text-decoration: none; color:lightgrey !important; }
+a.text-link:hover { text-decoration: none; color:white !important; }
+a.text-link:focus { text-decoration: none; color:white !important; }
+a.text-link:hover, a:active { text-decoration: none; color:lightgrey !important }

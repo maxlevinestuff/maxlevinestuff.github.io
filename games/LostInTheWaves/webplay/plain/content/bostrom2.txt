@@ -1,0 +1,10 @@
+/*
+ * How to add links:
+ * Complete self:									<a href="javascript:IAmCompleted()">this link</a>
+ * Add dictionary definition:						<a href="javascript:DeclareInDictionary('option 2')">this link</a>
+ * Complete self AND add dictionary definition:		<a href="javascript:IAmCompletedAndDeclareInDictionary('option 2')">this link</a>
+ *
+ * Make redacted text: 								<span class='redacted'>redacted text</span>
+ */
+
+var text = `To obtain a collective superintelligence from any present-day collective intelligence would require a very great degree of enhancement. The resulting system would need to be capable of vastly outperforming any current collective intelligence or other cognitive system across many very general domains. A new conference format that lets scholars exchange information more effectively, or a new collaborative information-filtering algorithm that better predicted users’ ratings of books and movies, would clearly not on its own amount to anything approaching collective superintelligence. Nor would a 50% increase in the world population, or an improvement in pedagogical method that enabled students to complete a school day in four hours instead of six. Some far more extreme growth of humanity’s collective cognitive capacity would be required to meet the criterion of <a href="javascript:IAmCompleted()">collective superintelligence</a>. [Bostrom]`

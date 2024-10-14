@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Message</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="alphabet.css">
+</head>
+
+<body>
+
+	<div id="main">
+
+		<table>
+			<tr class="alien">
+				<td>A</td>
+				<td>B</td>
+				<td>C</td>
+				<td>D</td>
+				<td>E</td>
+				<td>F</td>
+				<td>G</td>
+				<td>H</td>
+				<td>I</td>
+				<td>J</td>
+				<td>K</td>
+				<td>L</td>
+				<td>M</td>
+				<td>N</td>
+				<td>O</td>
+				<td>P</td>
+				<td>Q</td>
+				<td>R</td>
+				<td>S</td>
+				<td>T</td>
+				<td>U</td>
+				<td>V</td>
+				<td>W</td>
+				<td>X</td>
+				<td>Y</td>
+				<td>Z</td>
+			</tr>
+			<tr>
+				<td>A</td>
+				<td>B</td>
+				<td>C</td>
+				<td>D</td>
+				<td>E</td>
+				<td>F</td>
+				<td>G</td>
+				<td>H</td>
+				<td>I</td>
+				<td>J</td>
+				<td>K</td>
+				<td>L</td>
+				<td>M</td>
+				<td>N</td>
+				<td>O</td>
+				<td>P</td>
+				<td>Q</td>
+				<td>R</td>
+				<td>S</td>
+				<td>T</td>
+				<td>U</td>
+				<td>V</td>
+				<td>W</td>
+				<td>X</td>
+				<td>Y</td>
+				<td>Z</td>
+			</tr>
+		</table>
+
+		<div class="alien not-selectable" id="message-to-translate"></div>
+
+		<input id="attempt" type="text"></input>
+		<button id="enter-button" onclick="attempt()">Enter</button>
+		
+	</div>
+
+	<script src="../frame/frame.js"></script>
+
+	<script id="content"></script>
+
+	<script>
+		var text = params.get('content').replace(/[^\w\s]|_/g, "").replace(/\s+/g, "").toLowerCase();
+	</script>
+
+	<script>
+		//init and extra here
+		document.getElementById("message-to-translate").innerHTML = text;
+
+		function attempt() {
+			var attempt = document.getElementById('attempt').value.replace(/[^\w\s]|_/g, "").replace(/\s+/g, "").toLowerCase();
+			console.log(attempt);
+			console.log(text);
+			if (attempt == text) {
+				console.log("completed");
+				IAmCompleted();
+			} else
+				document.getElementById("attempt").classList.add("apply-shake");
+		}
+
+		document.getElementById("attempt").addEventListener("animationend", (e) => {
+			input.classList.remove("apply-shake");
+		});
+
+		//make enter press button
+		// Get the input field
+		var input = document.getElementById("attempt");
+		// Execute a function when the user releases a key on the keyboard
+		input.addEventListener("keyup", function(event) {
+			// Number 13 is the "Enter" key on the keyboard
+			if (event.keyCode === 13) {
+				// Cancel the default action, if needed
+				event.preventDefault();
+				// Trigger the button element with a click
+				document.getElementById("enter-button").click();
+			}
+		});
+	</script>
+
+</body>
+
+</html>

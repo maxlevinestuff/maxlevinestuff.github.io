@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Draw a brain</title>
+  <link rel="stylesheet" href="frame/frame.css">
+      <script src="frame/frame.js"></script>
+      <script>
+        function start() {
+          isTop = true;
+          nextTop = "5brainupload.html";
+    //loadSelf("message/message.html?clearStatic=true&content=content/message.txt");
+    loadAndWait(["message/message.html?content=content/president.txt", "4second.html"], true, "30%, 70%");
+}
+
+  </script>
+</head>
+
+<frameset onload="start()" id="main" rows="*" cols="*" border=0 framespacing=0 frameborder=no>
+</frameset>

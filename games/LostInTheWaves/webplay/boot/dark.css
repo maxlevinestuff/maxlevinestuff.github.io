@@ -1,0 +1,52 @@
+p {
+	padding: 0px;
+	margin: 0px;
+	color: lightgreen;
+	font-family: monospace;
+}
+
+body {
+	background-color: black;
+	margin: 0 auto;
+}
+
+canvas {
+	z-index: -1;
+	position: absolute;
+}
+
+#add-to-here {
+	z-index: 1;
+	position: absolute;
+	margin: 10px;
+}
+
+a {
+	text-decoration: none;
+	color: lightgreen;
+}
+
+#warning {
+	display: none;
+
+	font-family: monospace;
+	font-size: 2em;
+	color: red;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+	position: absolute;
+	background: black;
+
+	z-index: 5;
+}
+
+@keyframes flickerAnimation { /* flame pulses */
+  0%   { opacity:1; }
+  50%  { opacity:0; }
+  100% { opacity:1; }
+}
+#warning {
+    opacity:1;  
+    animation: flickerAnimation 1s infinite;
+}

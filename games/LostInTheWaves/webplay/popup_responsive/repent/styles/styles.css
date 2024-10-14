@@ -1,0 +1,309 @@
+.hide-ashevillecityhall, .hide-zion, .hide-mountzion, .hide-stjames, .hide-matthias {
+    display: none;
+    text-align: justify;
+}
+
+p {
+    text-align: justify;
+    font-family: cream_2;
+}
+
+@font-face {
+    font-family: pitch_display;
+}
+
+@font-face {
+    font-family: highway_gothic;
+}
+
+button {
+    border-radius: 100%;
+    border: none;
+    cursor: pointer;
+    font-family: cream_2;
+    font-size: 1.1em;
+    font-weight: bold;
+    text-align: center;
+    margin: 0 auto;
+    display: block;
+    margin-bottom: 1em;
+    margin-top: 0px;
+    color: black;
+    background-color: white;
+}
+
+@font-face {
+    font-family: cream_2;
+}
+
+body {
+  margin: 0 auto;
+  background-color: black;
+  color: white;
+}
+
+.parallax {
+  /* The image used */
+  background-image: url("../imgs/ashevillecityhall.jpg");
+
+  /* Set a specific height */
+  min-height: 300px;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.focus {
+  padding: 1em;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+img {
+  width: 45%;
+  margin: .5em;
+}
+.image-container {
+  text-align: center;
+}
+
+.text-bar{
+    width: 35%;
+    background-color:rgba(0,0,0,0.5);
+    margin: 5%;
+    padding: 1em;
+    font-family: highway_gothic;
+    font-size: 14pt;
+    border-radius: 1.1em;
+}
+
+h1 {
+    font-family: pitch_display;
+    text-align: center;
+}
+
+.intro {
+    font-family: pitch_display;
+    text-align: center;
+    font-size: 32pt;
+}
+
+.float-left {
+  float: left;
+}
+.float-right {
+  float: right;
+}
+
+body {
+    background-color: #000;
+    justify-content: space-around;
+    flex-direction: row;
+}
+
+.row{
+  display:  flex;
+  flex-basis: 100%;
+}
+.column{
+  flex: 1;
+  padding: 1%;
+    font-family: cream_2;
+}
+
+.column_intro{
+  flex: 1;
+  padding: 1%;
+    font-family: cream_2;
+}
+
+#about {
+    color: #CFBC72;
+    float: right;
+    font-family: highway_gothic;
+    text-decoration: none;
+    font-size: 18pt;
+}
+
+#title {
+    position: relative;
+    font-family: pitch_display;
+    font-size: 60pt;
+    color: #fff;
+    margin: 0 auto;
+    padding: 15px 32px;
+    border: none;
+    text-align: center;
+
+    background-color: black;
+
+}
+
+#profile {
+    background-image: url(../../parallax/imgs/title.jpg);
+    background-size: cover;
+    background-attachment: center;
+    background-position: center;
+    width: 100%;
+    height: 900px;
+    margin-left: 0px;
+}
+
+/* Navbar */
+/* Style the navbar */
+#navbar {
+    overflow: hidden;
+    background-color: black;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Navbar links */
+#navbar a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 10px;
+    text-decoration: none;
+    font-family: cream_2;
+}
+
+
+/* Page content */
+.content {
+    padding: 16px;
+}
+
+/* The sticky class is added to the navbar with JS when it reaches its scroll position */
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+/* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+.sticky + .content {
+    padding-top: 60px;
+}
+
+a {
+    color: white;
+    font-family: highway-gothic;
+}
+
+/* Styling for bubbles when click icons */
+.mapboxgl-popup-content {
+    test-align: center;
+    font-family: 'Georgia', serif;
+    background-color: black;
+}
+.mapboxgl-popup-content h2 {
+    color: red;
+}
+.mapboxgl-popup-content p {
+    color: green;
+}
+.mapboxgl-popup-content img {
+    display: block;
+    margin: 0 auto;
+}
+
+/*Mobile Optimization*/
+@media screen and (min-width: 0) and (max-width: 840px) {
+    #navBar {
+    width: 100%;
+    font-size: 8pt;
+    color: #f2f2f2;
+    }
+    
+    #profile {
+    background-image: url(../imgs/title.jpg);
+    background-size: 100%;
+    background-attachment: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 900px;
+    margin-left: 0px;
+}
+    
+    #title {
+        font-size: 2.6em;
+    }
+    
+    .intro {
+        font-size: 2em;
+        flex: 100%;
+    }
+    
+    .column_intro{
+        flex: 100%;
+        padding: 1%;
+        font-family: cream_2;
+    }
+    
+    .text-bar {
+        width: 80%;
+    }
+    
+    .hide-matthias {
+        font-size: 1.1em;
+    }
+    
+    .hide-mountzion {
+        font-size: 1.1em;
+    }
+    
+    .hide-ashevillecityhall {
+        font-size: 1.1em;
+    }
+    
+    .hide-stjames {
+        font-size: 1.1em;
+    }
+    
+    .hide-zion {
+        font-size: 1.1em;
+    }
+    
+    h1 {
+        font-size: 1.5em;
+    }
+    
+    p {
+        font-size: 1em;
+    }
+    
+    
+}/*End Mobile Optimization*/
+
+@media screen and (min-width: 0) and (max-width: 480px) {
+  p {
+    columns: 1;
+    color: #f7f7f7;
+    font-family: monospace;
+  }
+}
+@media screen and (min-width: 480px) and (max-width: 1200px) {
+  p {
+    columns: 2;
+    color: #f7f7f7;
+    font-family: serif;
+  }
+}
+@media screen and (min-width: 1200px) {
+  p {
+    columns: 3;
+    color: #f7f7f7;
+    font-family: sans-serif;
+  }
+}
+
+p {
+    font-size: 1.1em;
+}

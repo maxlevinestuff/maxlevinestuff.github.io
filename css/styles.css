@@ -1,0 +1,99 @@
+@font-face {
+	font-family: handwritten;
+	src: url('../font.ttf');
+}
+
+@media (max-width: 768px) {
+	#outer {
+		column-count: 1;
+	}
+	#navBar {
+		justify-content: space-around;
+		flex-direction: column;
+	}
+	#navBar a {
+		text-decoration: none;
+		color: #000;
+	}
+	.row {
+		display: block;
+	}
+}
+
+img {
+	width: 100%;
+}
+
+h2 {
+	color: black;
+	background-image: url('../imgs/heading.png');
+	background-repeat: no-repeat;
+	background-size: cover;
+	margin: 0 auto;
+	text-align: center;
+	font-style: bold;
+}
+
+.extra-height {
+	height: 50px;
+}
+
+a:link { text-decoration: none}
+
+.os-icon {
+	width: 20px;
+}
+
+.game-description {
+	font-size: 27px;
+
+	color: white;
+}
+
+.game-title {
+	color: white;
+	font-size: 35px;
+}
+
+.os-icons {
+	padding-bottom: 30px;
+}
+
+html,body {
+    margin:0;
+    padding:0;
+    background-color: black;
+    font-family: handwritten;
+    background-image: url('../imgs/black.jpg');
+}
+
+body * {
+	font-family: handwritten;
+}
+
+.text-center:hover * {
+	-webkit-filter: brightness(90%);
+	color: lightgrey;
+}
+
+.sidebar-link {
+	background-image: url('../imgs/heading.png');
+	text-align: center;
+	padding: 5px;
+	padding-left: 20px;
+	padding-right: 20px;
+	font-size: 22px;
+	color: black;
+	text-decoration: none;
+}
+
+.sidebar-link:hover {
+	background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../imgs/heading.png');
+	color: black;
+	cursor: pointer;
+}
+
+p {
+	color: white;
+	font-size: 50px;
+}

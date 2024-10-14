@@ -1,0 +1,43 @@
+body {
+	font-family: monospace;
+	background-color: black;
+	color: white;
+	margin: 2%;
+}
+
+a:link {
+  color: green;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+a:visited {
+  color: white;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+a:hover {
+  color: lightgreen;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+a:active {
+  color: darkgreen;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+.redacted {
+	background-color: white;
+	color: white;
+
+	/*Not selectable*/
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}

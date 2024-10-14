@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Entropy and the Fate of the Universe</title>
+	<link rel="stylesheet" href="styles/styles.css">
+	<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+	<link href="https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.css" rel="stylesheet">
+	<script src="https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.js"></script>
+	<script src="js/button.js"></script>
+	<meta charset="UTF-8">
+	  <link rel="stylesheet" href="../hidden_responsive.css">
+
+	  <style>
+		@media screen and (min-width: 1200px) {
+			.parallax {
+				background-image: url("../nightmare.gif") !important;
+			}
+		}
+	  </style>
+</head>
+
+<body>
+
+	<div id="top-nav"></div>
+	<div id="profile">
+    <h1 id="title">ENTROPY AND THE FATE OF THE UNIVERSE</h1>
+	<div id="navbar">
+		<a href="#top-nav">Top</a>
+		<a href="#matthias-nav">Pillars of Creation</a>
+		<a href="#mountzion-nav">Great Void</a>
+		<a href="#ashevillecityhall-nav">Great Wall</a>
+		<a href="#stjames-nav">TON</a>
+		<a href="#zion-nav">The Milky Way</a>
+	</div>
+	</div><!--end profile-->
+
+	<div class="focus">
+		<div class="row">
+			<div class="intro"><h1>Does it have to end?</h1></div>
+			<div class="column_intro"><p>Many millions of years ago, a discovery was made. This scientific breakthrough, the <span class="cross-out">Conservation of Mass theorem</span>, concluded “matter can neither be created nor destroyed”. Many of the individuals who heard or discovered this law didn’t care and felt indifferent. <span class="new-text">(Or they just weren't nerds.)</span> Those who didn’t care were usually the small civilizations, which thought that there was more than enough matter in the universe to go around. For the civilizations on the higher level of the Kardashev scale, however, this news was horrible. How would they support their massive population for the rest of time without an infinite amount of resources?</p></div>
+		</div>
+	</div>
+
+	<div class="parallax" id="matthias-nav" style="background-image: url('imgs/pillars_of_creation.jpg'); min-height: 900px;">
+		<div class="text-bar float-left">
+			<h1>The Pillars of Creation</h1>
+			<button onclick="hideClick('hide-matthias')">↓</button>
+			<div class="hide-matthias">
+				So named because the gas and dust are in the process of creating new stars.<span class="new-text"> (That's not why I thought...)</span>
+				<br>
+				Deconstruction date: ~3000 BCE
+			</div>
+		</div>
+        
+        <div class="text-bar float-right hide-matthias">
+			<div class="image-container">
+				<img src="imgs/pillars1.jpg">
+                <img src="imgs/pillars2.jpg">
+				
+			</div>
+		</div>
+        
+	</div>
+
+	<div class="focus">
+		<h1>A Solution Forms</h1>
+		<p>
+			The fear that was flowing through the citizens of the <span class="cross-out">high level civilization</span> caused the demand for matter to skyrocket. <span class="new-text">(Very expensive rocks.)</span> Extraterrestrial flying asteroids, dead bodies—anything that was made of matter was pumped through the society. Even the last of the great nebulas of hydrogen began to be mined out. Everything that was made of matter was considered by the public to be good, and anything that wasn’t was considered by the public to be bad. Fear of anything that was not matter was so intense that efforts to finish populating the universe’s Great Void (a one billion light-year wide space where nothing—not even stars or even small pieces of dust—exist) had halted.
+			<br>
+			<br>
+			Due to the high demand in matter, a new organization was founded. The “Intergalactic Cleanup Crew (ICC)” <span class="new-text">(Could have used a better name.)</span> was created under the idea that it would find any piece of matter that wasn’t doing anything useful—and make it do something useful. There just wasn’t enough matter in the <span class="cross-out">universe to allow some of it to just sit around </span> doing absolutely nothing. They had to make use of it. Any stray, obsolete matter would be hunted down by the ICC and taken apart at the subatomic level to be sold. They would sell billions of square kilometers worth of protons, neutrons, and electrons. <span class="new-text">(Considering these things take up no space, I'm not sure what their warehouses even looked like.)</span>
+			<br>
+			<br>
+			The ICC was successful, and soon reached the company’s <span class="cross-out"> critical mass of over one hundred </span> billion matter-seekers spread out across the entire universe. The matter-seekers were massive star ships that patrolled all of known existence and decided whether certain pieces of matter were worth being there or not. 
+		</p>
+	</div>
+
+	<div class="parallax" id="mountzion-nav" style="background-image: url('imgs/Giant_void.png'); min-height: 900px;">
+		<div class="text-bar float-right">
+			<h1>The Great Void</h1>
+			<button onclick="hideClick('hide-mountzion')">↓</button>
+			<div class="hide-mountzion">
+				Also known as the Giant Void in NGH, Canes Venatici Supervoid, and AR-Lp 36, it is a region of space with an underdensity of galaxies <span class="cross-out">spanning 1 to 1.3 billion lightyears</span>.
+				<br>
+				Deconstruction date: Pending
+				<div class="map" id="mountzion"></div>
+			</div>
+		</div>
+        
+        <div class="text-bar float-left hide-mountzion">
+			<div class="image-container">
+				<img src="imgs/void1.png">
+                <img src="imgs/void2.png">
+				
+			</div>
+		</div>
+        
+	</div>
+
+	<div class="focus">
+		<h1>Judge, Jury, Executioner</h1>
+		<p>
+			The occupants of a matter-seeker consist of two judges and a deciding committee. <span class="new-text">(We all agree that this is fair, right?)</span> One of the judges is the defense, and the other is the offense. <span class="cross-out">The defense defends the piece of matter in questions’ current position and purpose, and the offense argues that the particle(s) could be much more useful doing something else.</span> After the two judges argue for exactly one and three hundredths of an hour, the deciding committee votes on the object’s fate. They decide whether the object will be let go to do whatever it used to be doing, or if it will be broken down to the subatomic level and then compressed in the matter-seeker’s storage compartment. The committee is usually a little bit biased, however, as they receive a five percent commission of however much the subatomic particles sell for. <span class="new-text">(This is actually incredibly generous.)</span>
+			<br>
+			<br>
+			Over a century ago, a matter-seeker known specifically as 1AS21 was patrolling an insignificant part of the western spiral arm of a galaxy sometimes referred to as “the Milky Way”. Little is known about why the inhabitants decided to name their galaxy “the Milky Way”, but some theories suggest that it is referring to a white substance excreted from some of the inhabitants. Whatever the reason <span class="cross-out"> for the name of the galaxy, 1AS21 was patrolling it. Inside the insignificant western spiral arm of the Milky Way, </span> the 1AS21 was patrolling an even more insignificant eight-planet solar system. Three planets from this solar system’s sun were a blue-green planet harboring the life of the same species of idiots who decided to name the galaxy in which they lived “the Milky Way”. Six hundred miles from the surface of the blue green planet hovered 1AS21, making its decision on the planet’s ultimate fate. In exactly one and three hundredths of an hour, the planet would either remain untouched or would be completely dismantled into electrons, protons, and neutrons and stuffed into the matter-seeker’s storage compartments. <span class="new-text">(Again, no idea what that looks like.)</span>
+		</p>
+	</div>
+
+	<div class="parallax" id="ashevillecityhall-nav" style="background-image: url('imgs/hercules.jpg'); min-height: 900px;">
+		<div class="text-bar float-left">
+			<h1>Hercules-Corona Borealis Great Wall</h1>
+			<button onclick="hideClick('hide-ashevillecityhall')">↓</button>
+			<div class="hide-ashevillecityhall">
+				A supercluster of galaxies identified as the <span class="cross-out"> largest single entity </span> in the known universe. <span class="new-text">(The definition of 'entity' must be pretty lenient considering all the light-years of empty space between components.)</span>
+				<br>
+				Deconstruction date: Ongoing
+			</div>
+		</div>
+
+		<div class="text-bar float-right hide-ashevillecityhall">
+			<div class="image-container">
+				<img src="imgs/hercules1.jpg">
+                <img src="imgs/hercules2.jpg">
+			</div>
+		</div>
+
+	</div>
+
+	<div class="focus">
+		<h1>A Billion Lives, a Drop of Fuel</h1>
+		<p>
+			“Welcome to the court of matter-seeker 1AS21,” began the offense judge. <span class="cross-out"> “The planet earth of the Geniva solar system in the western spiral arm </span> of the milky way galaxy inside the intergalactic Virgo supercluster has been charged for the following crime: existing without purpose. Is their anything that the defense would like to say to disprove that earth is guilty of this crime?” The defense cleared its throat. <span class="new-text">(Yes, please aim the microphone at us, like what was done in Hitchhiker's Guide to the Galaxy.)</span>
+			<br>
+			<br>
+			“The earth is a planet with life. Allowing it to stay <span class="cross-out"> in existence could offer </span> a future food source to our civilization,” said the defense.
+			<br>
+			<br>
+			“Are you not aware that the life forms on earth are carbon based?” asked the offense. “Carbon is not fit to be eaten by our species, which disallows the possibility of becoming food.”
+		</p>
+	</div>
+
+	<div class="parallax" id=stjames-nav style="background-image: url('imgs/TON.png'); min-height: 900px;">
+		<div class="text-bar float-right">
+			<h1>TON 618</h1>
+			<button onclick="hideClick('hide-stjames')">↓</button>
+			<div class="hide-stjames">
+				The largest known black hole at an estimated <span class="cross-out">mass exceeding 66 billion suns.</span> <span class="new-text">(A lot)</span>
+				<br>
+				Deconstruction date: 2500 AD
+			</div>
+		</div>
+        
+         <div class="text-bar float-left hide-stjames">
+			<div class="image-container">
+				<img src="imgs/TON1.png">
+                <img src="imgs/TON2.jpg">
+				
+			</div>
+		</div>
+        
+	</div>
+
+	<div class="focus">
+		<h1>Bureaucratic Difficulties</h1>
+		<p>
+			The defense rolled its eyestalk, <span class="new-text">(Actually very fashionable among alien species.)</span> showing that<span class="cross-out"> it didn’t care whether the earth </span> was destroyed or not. “The earth is at optimum distance with its moon, which means great beaches with perfect waves. Because of the moons distance from the earth and the pull on the oceans it causes, we could turn earth into a vacation surfing area,” said the defense.
+			<br>
+			<br>
+			“Slippery slope!” called the offense. “We are neither talking about the moon nor the oceans, we are talking about the earth—stay on topic.”
+			<br>
+			<br>
+			The defense was bored. This was its eleventh planet in <span class="cross-out">one day, and it wanted to go home. It glanced at its watch—damn, only five minutes had passed since the start of earth’s </span> conviction.
+		</p>
+	</div>
+
+	<div class="parallax" id="zion-nav" style="background-image: url('imgs/milkyway.png'); min-height: 900px;">
+		<div class="text-bar float-left">
+			<h1>The Milky Way</h1>
+			<button onclick="hideClick('hide-zion')">↓</button>
+				<div class="hide-zion">
+				Another grain of sand.
+				<br>
+				<span class="cross-out">Deconstruction date: Current</span>
+			</div>
+		</div>
+        
+         <div class="text-bar float-left hide-zion">
+			<div class="image-container">
+				<img src="imgs/milky1.jpg">
+                <img src="imgs/milky2.jpeg">
+				
+			</div>
+		</div>
+        
+	</div>
+
+	<div class="focus" id=sources-nav>
+		Note: There has to be a better way. All of this destruction <span class="cross-out">is only working with entropy</span>. We have to find another way, outside the system...
+	</div>
+
+	<script src="js/main.js"></script>
+</html>

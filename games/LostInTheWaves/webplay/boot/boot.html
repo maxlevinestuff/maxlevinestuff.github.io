@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Interface</title>
+  <link rel="stylesheet" href="dark.css">
+  <link rel="shortcut icon" type="image/png" href="0resources/favicon.png"/>
+</head>
+
+<body onload="init()">
+
+  <div id="warning">Warning:<br>Anomalous activity detected.<br>Systems self-destruct in 10 minutes.</div>
+  <div id="add-to-here">
+  </div>
+
+  <canvas id="canvas" width="400" height="400" style="background-color:white">
+  </canvas>
+
+  <script src="../frame/frame.js"></script>
+
+  <script src="canvas_static.js"></script>
+
+  <script id="content"></script>
+
+  <script>
+    document.getElementById("content").src = params.get('content');
+    if (params.has('warning'))
+      document.getElementById("warning").style.display = "unset";
+  </script>
+
+  <script>
+
+    function nextStep() {
+      var atBottom = ((window.innerHeight + window.scrollY) >= document.body.offsetHeight);
+
+        stepNum++;
+        addText(poemArray[stepNum], true);
+
+      if (stepNum+1 >= poemArray.length) {
+        clearInterval(stepInterval);
+        IAmCompleted();
+      }
+
+      if (atBottom)
+        window.scrollTo(0,document.body.scrollHeight);
+    }
+
+    var poemArray;
+    var stepNum;
+    var stepInterval; //1000
+
+    function init() {
+      poemArray = poemText.split("\n");
+      stepNum = 0;
+      stepInterval = window.setInterval(nextStep, 100); //1000
+    }
+
+    function addText(text, isFrom) {
+
+      var newText = document.createElement("p");
+      if (isFrom)
+        newText.className = "from";
+      else
+        newText.className = "to";
+
+      newText.innerHTML = text;
+
+      document.getElementById("add-to-here").appendChild(newText);
+    }
+
+  </script>
+</body>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Message</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="styles.css">
+</head>
+
+<body onload="init()">
+
+	<div id="main">
+	</div>
+
+	<script src="../frame/frame.js"></script>
+
+	<script id="content"></script>
+
+	<script>
+		document.getElementById("content").src = params.get('content');
+	</script>
+
+	<script>
+		function init() {
+			document.getElementById("main").innerHTML = text;
+
+			var links = document.getElementsByTagName("a");
+			for (let link of links) {
+				link.addEventListener('click', function onClick() {
+					link.style.color = 'white';
+				});
+			}
+
+			if (params.get('autocomplete'))
+				IAmCompleted();
+		}
+	</script>
+
+</body>
+
+</html>

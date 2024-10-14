@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Draw a brain</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="formPages.css">
+  <link rel="shortcut icon" type="image/png" href="0resources/favicon.png"/>
+</head>
+
+<body style="height: 90%">
+
+<div class="text-col">
+
+<form id="form" action="7.html">
+
+  <p>The living biosphere is best summarized by</p>
+      <input type="radio" name="bio">sin(2x^2)</input> <br>
+    <input type="radio" name="bio">tan(y + log(y))</input> <br>
+          <input type="radio" name="bio">cos(z) * sqrt(z)</input> <br>
+                    <input type="radio" name="bio">0</input> <br>
+
+  <p>Hypothetically if you had to choose to experience only one sense, it would be</p>
+      <input type="radio" name="sense">sight</input> <br>
+    <input type="radio" name="sense">hearing</input> <br>
+          <input type="radio" name="sense">touch</input> <br>
+                    <input type="radio" name="sense">taste/smell</input> <br>
+                    <input type="radio" name="sense">nausea</input> <br>
+
+  <br>
+  <input type="submit" value="continue"/>
+
+</form>
+
+</div>
+
+<script>
+	document.getElementById("form").addEventListener('change', (event) => {
+  parent.formChanged();
+});
+</script>
+
+</body>

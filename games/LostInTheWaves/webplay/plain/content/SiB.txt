@@ -1,0 +1,10 @@
+/*
+ * How to add links:
+ * Complete self:									<a href="javascript:IAmCompleted()">this link</a>
+ * Add dictionary definition:						<a href="javascript:DeclareInDictionary('option 2')">this link</a>
+ * Complete self AND add dictionary definition:		<a href="javascript:IAmCompletedAndDeclareInDictionary('option 2')">this link</a>
+ *
+ * Make redacted text: 								<span class='redacted'>redacted text</span>
+ */
+
+var text = `Say you owned a corporation, a really successful research corporation that caught the eye of the government. Your corporation employs a great number of scientists, all generating knowledge—private knowledge. Now, say that the government didn’t like your research corporation because they saw it as a threat. Of course, this would be in America with the free market and all, and they wouldn’t show up on your doorstep wielding tanks and fighter jets. Imagine that! Tanks and fighter jets pitted against an organization of citizens. No, the government would only do that as a <a href="javascript:IAmCompletedAndDeclareInDictionary('found')">last resort</a>...`

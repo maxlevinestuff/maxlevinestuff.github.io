@@ -1,0 +1,81 @@
+/* 
+ * Stuff to keep in mind:
+ * There are two images that appear at certain points: shadow gif and neural tangle
+ * User auto-replies "Who is this?"
+ *	(See main js for timing of those)
+ * Then, in here, there are a few points differing from original poem:
+ * 	There's a parenthetical note saying you can skip by saying bye
+ *	There's an actual link to the fake fruit story
+ *	And at the end, it says thanks for listening, bye, and gives link to next page
+ */
+
+var poemText = `using System.Collections;
+using System.Collections.Generic;
+using Events;
+
+public class AnimationFragmentHandler : MonoBehaviour
+{
+    Control control;
+
+    public delegate IEnumerator AnimationFragment(int[] parms);
+
+    private List<AnimationFragment> animationFragmentQueue = new List<AnimationFragment>();
+    private List<int[]> animationFragmentQueueArgs = new List<int[]>();
+
+    //count of all non-user non-wait coroutines
+    private int activeCoroutines = 0;
+
+    public void startingCoroutine()
+    {
+        activeCoroutines++;
+    }
+    public void endingCoroutine()
+    {
+        activeCoroutines--;
+    }
+    public bool stillActive()
+    {
+        return activeCoroutines > 0;
+    }
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        control = FindObjectOfType<Control>();
+    }
+
+    public void EnqueueFragmentFront(AnimationFragment frag, int[] args)
+    {
+        animationFragmentQueue.Insert(0, frag);
+        animationFragmentQueueArgs.Insert(0, args);
+    }
+
+    public void EnqueueFragmentBack(AnimationFragment frag, int[] args)
+    {
+        animationFragmentQueue.Add(frag);
+        animationFragmentQueueArgs.Add(args);
+    }
+
+    public void StartNext()
+    {
+        if (animationFragmentQueue.Count == 0)
+        {
+            //Debug.Log("Tried to start next but queue is empty!");
+            control.startNextPlayerTurn();
+            return;
+        }
+        AnimationFragment nextFragment = animationFragmentQueue[0];
+        animationFragmentQueue.RemoveAt(0);
+        int[] nextArg = animationFragmentQueueArgs[0];
+        animationFragmentQueueArgs.RemoveAt(0);
+        StartCoroutine(nextFragment(nextArg));
+    }
+
+    public void StartNextPlayerTurnEarly()
+    {
+        animationFragmentQueue = new List<AnimationFragment>();
+        animationFragmentQueueArgs = new List<int[]>();
+        activeCoroutines = 0;
+        control.startNextPlayerTurn();
+    }
+}`

@@ -1,0 +1,17 @@
+/* 
+ * * on the second line to indicate if the text should write itself out instantly until a user response is required
+ * > to create a label
+ * < to goto next label
+ * ) to create an answer for multiple choice question
+ * % at end of answer to make an abbreviation
+ * $ at end of answer (after abbreviation) with a key name. user must have triggered addKeyPossibility(key) in order to choose this response
+ * < below each answer choice for where to go to label (not needed if only one answer choice)
+ * # to link image
+ */
+
+var poemText = `The Alien
+I am going to need you to upload your brain now. Just follow the steps.
+
+)Okay
+
+Thank you, Abernathy.`

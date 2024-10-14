@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Message</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="styles.css">
+</head>
+
+<body onload="init()">
+
+	<div id="main">
+
+		<div class="row">
+
+			<div class="col1">
+				<div class="inside">
+					<div style="width: 100%; height: 200px;" class="sidebar-option">
+						<h1 class="name-spot"></h1>
+						<p id="latest-message"></p>
+					</div>
+				</div>
+			</div>
+
+			<div class="col2">
+
+				<div id="navbar">
+				    <div class="name-spot"></div>
+			  	</div>
+
+				<div id="window">
+
+					<div id="add-to-here">
+					</div>
+
+					<div id="dotdotdot" class="container-left">
+						<p class="from" id="dotdotdot-inside">...</p>
+					</div>
+
+				</div>
+
+				<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+				<div id="form">
+					<div id="add-options-to-here"></div>
+					<input type="text" id="input" autocomplete="off" autofocus>
+					<button id="button" onclick="chatInputAttempt()">⬆</button>
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+	<script src="../frame/frame.js"></script>
+
+	<script id="content"></script>
+
+	<script>
+		document.getElementById("content").src = params.get('content');
+	</script>
+
+	<script>
+
+		function getGoto(goto_tag) {
+			for (let tag_search_line = 0; tag_search_line < poemArray.length; tag_search_line++) {
+				if (poemArray[tag_search_line] == ">" + goto_tag) {
+					return tag_search_line + 1;
+				}
+			}
+		}
+
+		var sentSound = new Audio("sent.wav");
+		sentSound.volume = 0.35;
+
+		var optionArray = new Array();
+
+		var stepNum = 0;
+
+		var possibleAnswers = new Array();
+		var possibleAnswerResults = new Array();
+
+		var optionReferences = {};
+
+		//optionArray[0].remove();
+		function nextStep() {
+
+			var atBottom = ((window.innerHeight + window.scrollY) >= document.body.offsetHeight);
+
+			if (stepNum < poemArray.length) { //added this whole enclsure to fix bug
+
+				if (poemArray[stepNum][0] == "<") {
+					stepNum = getGoto(poemArray[stepNum].substring(1));
+					nextStep();
+					return;
+				} else if (poemArray[stepNum][0] == "$") {
+					if (! GetFromDictionary(poemArray[stepNum].substring(1))) {
+						DeclareInDictionary(poemArray[stepNum].substring(1));
+					}
+					stepNum++;
+					nextStep();
+					return;
+				} else if (poemArray[stepNum][0] == ")") {
+					skipStartUntilResponseNeeded = false;
+					var answerSearchLine = stepNum;
+					possibleAnswers = new Array();
+					possibleAnswerResults = new Array();
+					while((answerSearchLine + 1) < poemArray.length && poemArray[answerSearchLine][0] == ")" && (poemArray[answerSearchLine + 1][0] == "<") || possibleAnswers.length == 0) {
+						possibleAnswers.push(poemArray[answerSearchLine].substring(1));
+						answerSearchLine++;
+						if (answerSearchLine < poemArray.length) //added this if else to fix bug. used to be just the one push operation
+							possibleAnswerResults.push(poemArray[answerSearchLine].substring(1));
+						else
+							possibleAnswerResults.push("n/a");
+						answerSearchLine++;
+						if (answerSearchLine >= poemArray.length || poemArray[answerSearchLine - 1][0] != "<") break; //added this line to fix bug affecting one word answers. seems to work
+					}
+					console.log(possibleAnswers.length);
+					if (possibleAnswers.length == 1)
+						stepNum = answerSearchLine - 2;
+					optionReferences = {};
+					clearInterval(stepInterval);
+					hideDot();
+
+					for (var i = 0; i < possibleAnswers.length; i++) {
+	    				addOption(possibleAnswers[i], possibleAnswerResults[i]);
+	    			}
+					//showDot();
+					return;
+				} else if (poemArray[stepNum][0] == ">") {
+					stepNum++
+					nextStep();
+					return;
+				}
+
+				addText(poemArray[stepNum], true);
+				stepNum++;
+
+			}
+
+			if (stepNum >= poemArray.length) {
+				clearInterval(stepInterval);
+				hideDot();
+				window.setTimeout(IAmCompleted, 1000);
+			} else if (poemArray[stepNum][0] == ")") {
+				clearInterval(stepInterval);
+				hideDot();
+				nextStep();
+			}
+
+			if (atBottom)
+				window.scrollTo(0,document.body.scrollHeight);
+
+			if (skipStartUntilResponseNeeded) {
+				if (poemArray[stepNum][0] != ")")
+					nextStep();
+				else
+					skipStartUntilResponseNeeded = false;
+			}
+			console.log("reached");
+		}
+
+		var poemArray;
+		var skipStartUntilResponseNeeded;
+		var stepInterval;
+		var dotCount;
+		function init() {
+			poemArray = poemText.split("\n");
+			poemArray = poemArray.filter(element => { //remove all line breaks
+				return element !== '';
+			});
+
+			var nameSpots = document.getElementsByClassName("name-spot");
+			for (var i = 0; i < nameSpots.length; i++) {
+	   			nameSpots[i].innerHTML = poemArray[0];
+			}
+			poemArray.shift();
+
+			skipStartUntilResponseNeeded = false;
+			if (poemArray[0] == "*") {
+				skipStartUntilResponseNeeded = true;
+				poemArray.shift();
+				nextStep();
+			} else
+				stepInterval = window.setInterval(nextStep, 1000); //1000
+
+			window.setInterval(changeDots, 500);
+			dotCount = 0;
+
+			for (const [key, value] of Object.entries(window.globalDic)) {
+				optionReferences[key].style.display = "block";
+			}
+		}
+
+		function changeDots() {
+			dotCount = (dotCount + 1) % 4;
+			var s;
+			switch(dotCount) {
+				case 0:
+					s = "&nbsp&nbsp&nbsp"; break;
+				case 1:
+					s = ".&nbsp&nbsp"; break;
+				case 2:
+					s = "..&nbsp"; break;
+				case 3:
+					s = "..."; break;
+			}
+			document.getElementById("dotdotdot-inside").innerHTML = s;
+		}
+		function hideDot() {
+			document.getElementById("dotdotdot").style.visibility = "hidden";
+		}
+		function showDot() {
+			dotCount = 3;
+			document.getElementById("dotdotdot-inside").innerHTML = "...";
+			document.getElementById("dotdotdot").style.visibility = "visible";
+		}
+
+		function addText(text, isFrom) {
+
+			var atBottom = ((window.innerHeight + window.scrollY) >= document.body.offsetHeight);
+
+			var newElementContainer = document.createElement("div");
+			if (isFrom)
+				newElementContainer.className = "container-left";
+			else
+				newElementContainer.className = "container-right";
+
+			var newThing;
+
+			if (text[0] == "#") {
+
+				newThing = document.createElement("img");
+
+				newElementContainer.appendChild(newThing);
+
+				document.getElementById("add-to-here").appendChild(newElementContainer);
+
+				if (atBottom) {
+					newThing.addEventListener('load', (event) => {
+					    window.scrollTo(0,document.body.scrollHeight);
+					});
+				}
+
+				newThing.src = text.substring(1);
+
+			} else {
+				newThing = document.createElement("p");
+
+				newThing.innerHTML = text;
+
+				if (text == "")
+					newThing.style.backgroundColor = "black";
+
+				newElementContainer.appendChild(newThing);
+
+			}
+
+			if (isFrom)
+				newThing.className = "from";
+			else
+				newThing.className = "to";
+
+			document.getElementById("add-to-here").appendChild(newElementContainer);
+
+			if (text.length > 100)
+				document.getElementById("latest-message").innerHTML = text.slice(0,100) + "...";
+			else
+				document.getElementById("latest-message").innerHTML = text.slice(0,100);
+
+			sentSound.play();
+		}
+
+		function addOption(text, result) {
+			var newElementContainer = document.createElement("div");
+			newElementContainer.className = "container-center";
+
+			var keySplit = text.split("$");
+			if (keySplit.length > 1) {
+				text = keySplit[0];
+				optionReferences[keySplit[1]] = newElementContainer;
+				if (! GetFromDictionary(keySplit[1]))
+					newElementContainer.style.display = "none";
+			}
+
+			var newThing;
+
+			if (text[0] == "#") {
+				newThing = document.createElement("img");
+				newThing.src = text.substring(1);
+			} else {
+				newThing = document.createElement("p");
+				var abbrevSplit = text.split("%");
+				if (abbrevSplit.length > 1) {
+					newThing.innerHTML = abbrevSplit[1];
+					text = abbrevSplit[0];
+				}
+				else
+					newThing.innerHTML = text;
+			}
+
+			newThing.className = "option";
+
+			newElementContainer.appendChild(newThing);
+
+			document.getElementById("add-options-to-here").appendChild(newElementContainer);
+			optionArray.push(newElementContainer);
+
+			newThing.addEventListener('click', function(){
+    			addResponse(text, result);
+			});
+
+			newThing.addEventListener('mouseover', function(){
+				document.getElementById("input").value = text;
+			});
+
+			newThing.addEventListener('mouseleave', function(){
+				document.getElementById("button").style.borderStyle = "outset";
+			});
+
+			newThing.addEventListener('mousedown', function(){
+				document.getElementById("button").style.borderStyle = "inset";
+			});
+
+			newThing.addEventListener('mouseup', function(){
+				document.getElementById("button").style.borderStyle = "outset";
+			});
+		}
+
+		function addResponse(text, result) {
+		    if (optionArray.length > 1)
+		    	stepNum = getGoto(result);
+		    else
+		    	stepNum++;
+
+			addText(text, false);
+			document.getElementById("input").value = "";
+			for (var i = 0; i < optionArray.length; i++) {
+				optionArray[i].remove();
+			}
+			optionArray = new Array();
+
+			clearInterval(stepInterval);
+			if (stepNum >= poemArray.length)
+				nextStep(); //go right to next step so it can deal with completing
+			else if (poemArray[stepNum][0] == ")")
+				beginNextResponse();
+			else
+				window.setTimeout(beginResponding, 800);
+
+			window.scrollTo(0,document.body.scrollHeight);
+		}
+
+		function beginResponding() {
+			showDot();
+			clearInterval(stepInterval);
+			stepInterval = window.setInterval(nextStep, 1000);
+		}
+		function beginNextResponse() {
+			clearInterval(stepInterval);
+			nextStep();
+		}
+
+		var newImage;
+		function addImage(link) {
+			var atBottom = ((window.innerHeight + window.scrollY) >= document.body.offsetHeight);
+
+			var newElementContainer = document.createElement("div");
+			newElementContainer.className = "container-left";
+
+			newImage = document.createElement("img");
+
+			newElementContainer.appendChild(newImage);
+
+			document.getElementById("add-to-here").appendChild(newElementContainer);
+
+			if (atBottom) {
+				newImage.addEventListener('load', (event) => {
+				    window.scrollTo(0,document.body.scrollHeight);
+				});
+			}
+
+			newImage.src = link;
+		}
+
+		// Execute a function when the user releases a key on the keyboard
+		document.getElementById("input").addEventListener("keyup", function(event) {
+		  // Number 13 is the "Enter" key on the keyboard
+		  if (event.keyCode === 13) {
+		    // Cancel the default action, if needed
+		    event.preventDefault();
+		    // Trigger the button element with a click
+		    document.getElementById("button").click();
+		  }
+		});
+
+		function chatInputAttempt() {
+			if (possibleAnswers.length != 0) {
+				for (var i = 0; i < possibleAnswers.length; i++) {
+
+					var keyOpen = false;
+					var keySplit = possibleAnswers[i].split("$");
+					if (keySplit.length == 1)
+						keyOpen = true;
+					else if (GetFromDictionary(keySplit[1]))
+						keyOpen = true;
+
+					var plainTextTheSame = false;
+					var abbrevSplit = keySplit[0].split("%");
+					if (abbrevSplit[0] == document.getElementById("input").value)
+						plainTextTheSame = true;
+
+					if (keyOpen && plainTextTheSame) {
+						addResponse(abbrevSplit[0], possibleAnswerResults[i]);
+						break;
+					}
+				}
+			}
+		}
+
+		document.getElementById("button").addEventListener('mouseleave', function(){
+			document.getElementById("button").style.borderStyle = "outset";
+		});
+
+		document.getElementById("button").addEventListener('mousedown', function(){
+			document.getElementById("button").style.borderStyle = "inset";
+		});
+
+		document.getElementById("button").addEventListener('mouseup', function(){
+			document.getElementById("button").style.borderStyle = "outset";
+		});
+
+		// function receivePassDown(key) { //to receive keys from parent frames
+		// 	addKeyPossibility(key);
+		// }
+
+		function newEntryInDictionaryToChild(key) {
+			optionReferences[key].style.display = "block";
+		}
+
+	</script>
+
+</body>
+
+</html>

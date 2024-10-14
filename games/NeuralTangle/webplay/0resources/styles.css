@@ -1,0 +1,11 @@
+@font-face {
+	font-family: handwritten;
+	src: url(../1artbook/maxhandwriting.ttf);
+}
+
+body {
+	background: black;
+	margin: 0px;
+	padding: 0px;
+	cursor: crosshair;
+}

@@ -1,0 +1,80 @@
+@font-face {
+	font-family: handwritten;
+	src: url(../../1artbook/maxhandwriting.ttf);
+}
+
+#background-text {
+	        margin: 3rem;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            z-index: -1;
+            color: #5e5e5e;
+}
+
+img {
+	width: 700px;
+}
+
+body {
+	cursor: pointer;
+	background-color: black;
+}
+
+.inside {
+	margin: 20px;
+
+	font-family: handwritten;
+	font-size: 40pt;
+	text-align: center;
+
+	color: white;
+}
+
+.main-page-block-left {
+	z-index: 1;
+	width: 1000px;
+	height: 500px;
+	position: relative;
+
+	background-color: black;
+	border-radius: 25px;
+
+	margin: 100px;
+
+	margin-bottom: 30%;
+
+	margin-right: 100%;
+
+	float: left;
+
+	width: fit-content;
+	block-size: fit-content;
+}
+
+.main-page-block-right {
+	z-index: 1;
+	width: 1000px;
+	height: 500px;
+	position: relative;
+
+	background-color: black;
+	border-radius: 25px;
+
+	margin: 100px;
+
+	margin-bottom: 30%;
+
+	margin-left: 100%;
+
+	float: right;
+
+	width: fit-content;
+	block-size: fit-content;
+}
+
+#end-link {
+	background-color: #00ffff;
+	cursor: pointer;
+}

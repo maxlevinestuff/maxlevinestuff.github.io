@@ -1,0 +1,60 @@
+/* 
+ * Stuff to keep in mind:
+ * There are two images that appear at certain points: shadow gif and neural tangle
+ * User auto-replies "Who is this?"
+ *	(See main js for timing of those)
+ * Then, in here, there are a few points differing from original poem:
+ * 	There's a parenthetical note saying you can skip by saying bye
+ *	There's an actual link to the fake fruit story
+ *	And at the end, it says thanks for listening, bye, and gives link to next page
+ */
+
+var poemText = `The reason tartigrades are titled Water Bears is
+ because Goeze, in the first paper published abo
+ ut tartigrades stated: “Strange is this animal… because
+  it resembles a bear in miniature,” this description was used
+  to call the strange creatures bears. Th
+ e reason they are called “Water Bears” and not just 
+ is because they normally live in water.
+2.   The way the tartigrade reacts to dehydratio
+n is by sending a sugar called trehalose to replac
+e the lost water in their cells before they curl up into 
+little balls called tuns, where their metabolis
+m decreases to an astonishing 0.01 percent of normal or is entirely undetectable.
+3.  An astrobiologist might be interested in tar
+tigrades because they can survive in cryptobiosis 
+therefore they have the ability to be transferred by panspermia 
+(hitching a ride on meteorites to tra
+vel to different planets.)
+4.  The number of tartigrades thought to be dis
+covered may be misleading because the same species of 
+tartigrade may have been discovered may have been “discovered”
+more than once due to the poor des
+criptions of earlier studies.
+5.  Tartigrades prefer living on moss and lichen
+ because of the wet/dry cycles that happen on the two plants 
+ often. These wet/dry cycles allow tartigrades to easily 
+ outcompete other organisms for food beca
+ use they are best at surviving the wide range of wet and dry.
+6.  Tartigrades and arthropods are similar because they both 
+grow by molting. Tartigrades and arthropods are different however, 
+because tartigrades have un-j
+oined appendages while arthropods’ are joined. Arthropods 
+and tartigrades are also different because while arthropods have jaws,
+a tartigrade has a spear-like 
+mouth called a stylet.
+7.  Tartigrades are not commonly found in the fossil record 
+because the small and soft bodies of a tartigrade don’t make 
+good fossils and are hard to see.
+8.  Tartigrades are good candidates for panspermia
+because they can survive in extreme conditions, like the vacuum 
+of space, making it a near perfect candidate for riding comets through space.
+9.  Tartigrades are more common in Temperate and 
+Polar Regions than in the tropics but no one knows why. Even 
+places that would seem like perfect environments for tartigrades 
+turn out not to home any. The way 
+tartigrades are distributed throughout the planet is by being 
+blown on the wind while clinging to their flakes of lichen, 
+being digested by a bird to be 
+deposited somewhere or any other form of transportation 
+available to these tiny creatures.`

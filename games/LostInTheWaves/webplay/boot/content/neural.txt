@@ -1,0 +1,72 @@
+/* 
+ * Stuff to keep in mind:
+ * There are two images that appear at certain points: shadow gif and neural tangle
+ * User auto-replies "Who is this?"
+ *	(See main js for timing of those)
+ * Then, in here, there are a few points differing from original poem:
+ * 	There's a parenthetical note saying you can skip by saying bye
+ *	There's an actual link to the fake fruit story
+ *	And at the end, it says thanks for listening, bye, and gives link to next page
+ */
+
+var poemText = `15.26,14.84,0.871,5.763,3.312,2.221,5.22,1
+14.88,14.57,0.8811,5.554,3.333,1.018,4.956,1
+14.29,14.09,0.905,5.291,3.337,2.699,4.825,1
+13.84,13.94,0.8955,5.324,3.379,2.259,4.805,1
+16.14,14.99,0.9034,5.658,3.562,1.355,5.175,1
+# Initialize a network
+def initialize_network(n_inputs, n_hidden, n_outputs):
+    network = list()
+    hidden_layer = [{'weights':[random() for i in range(n_inputs + 1)]} for i in range(n_hidden)]
+    network.append(hidden_layer)
+    output_layer = [{'weights':[random() for i in range(n_hidden + 1)]} for i in range(n_outputs)]
+from random import seed
+from random import random
+
+# Initialize a network
+def initialize_network(n_inputs, n_hidden, n_outputs):
+seed(1)
+network = initialize_network(2, 1, 2)
+for layer in network:
+    print(layer)
+[{'weights': [0.13436424411240122, 0.8474337369372327, 0.763774618976614]}]
+[{'weights': [0.2550690257394217, 0.49543508709194095]}, {'weights': [0.4494910647887381, 0.651592972722763]}]
+activation = sum(weight_i * input_i) + bias
+# Calculate neuron activation for an input
+def activate(weights, inputs):
+    activation = weights[-1]
+    for i in range(len(weights)-1):
+        activation += weights[i] * inputs[i]
+    return activation
+output = 1 / (1 + e^(-activation))
+
+# Calculate neuron activation for an input
+def activate(weights, inputs):
+    activation = weights[-1]
+    for i in range(len(weights)-1):
+        activation += weights[i] * inputs[i]
+    return activation
+
+# Transfer neuron activation
+def transfer(activation):
+    return 1.0 / (1.0 + exp(-activation))
+
+# Forward propagate input to a network output
+def forward_propagate(network, row):
+    inputs = row
+    for layer in network:
+        new_inputs = []
+        for neuron in layer:
+            activation = activate(neuron['weights'], inputs)
+            neuron['output'] = transfer(activation)
+            new_inputs.append(neuron['output'])
+        inputs = new_inputs
+    return inputs
+
+# test forward propagation
+network = [[{'weights': [0.13436424411240122, 0.8474337369372327, 0.763774618976614]}],
+        [{'weights': [0.2550690257394217, 0.49543508709194095]}, {'weights': [0.4494910647887381, 0.651592972722763]}]]
+row = [1, 0, None]
+output = forward_propagate(network, row)
+print(output)
+[https://machinelearningmastery.com/implement-backpropagation-algorithm-scratch-python/]`

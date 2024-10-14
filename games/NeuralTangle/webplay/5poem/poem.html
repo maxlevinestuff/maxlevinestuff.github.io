@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Are you even listening?</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="styles.css">
+	<link rel="shortcut icon" type="image/png" href="../0resources/favicon.png"/>
+</head>
+
+<body id="body" onclick="startAudio()">
+
+<audio src="The Primal Void.mp3" id="background-music" autoplay loop></audio>
+
+	<div id="window">
+
+		<div id="add-to-here">
+		</div>
+
+		<div id="dotdotdot" class="container-left">
+			<p class="from" id="dotdotdot-inside">...</p>
+		</div>
+
+	</div>
+
+	<br><br><br><br><br><br><br><br>
+
+	<div id="form">
+			<input type="text" id="input" autocomplete="off" autofocus>
+			<button id="button" onclick="chatInput()">⬆</button>
+	</div>
+
+	<script src="poemText.txt"></script>
+
+	<script>
+
+		var sentSound = new Audio("sent.mp3");
+		sentSound.volume = 0.35;
+		
+		function startAudio() {
+			document.getElementById('background-music').play();
+			document.getElementById('body').style.cursor = 'initial';
+		}
+
+		var poemArray = poemText.split("\n");
+		var stepNum = 0;
+		var everyOther = 0;
+		function nextStep() {
+			startAudio();
+			var atBottom = ((window.innerHeight + window.scrollY) >= document.body.offsetHeight);
+
+			if (everyOther == 0) {
+				//add stanza break
+				if (poemArray[stepNum] == "") {
+					addText(poemArray[stepNum], true);
+					stepNum++;
+				}
+				addText(poemArray[stepNum], true);
+				switch (stepNum) { //add image times
+					case 6: addImage("../1artbook/images/nightmare.gif"); break;
+					case 222: addImage("../1artbook/images/10.png"); break;
+				}
+				stepNum++;
+			} else {
+				switch (stepNum) { //auto response times. note: will be skipped over if line break
+					case 4: addText("Who is this?", false); break;
+				}
+			}
+			everyOther = (everyOther + 1) % 2;
+
+			if (stepNum >= poemArray.length) {
+				clearInterval(stepInterval);
+				hideDot();
+			}
+
+			if (atBottom)
+				window.scrollTo(0,document.body.scrollHeight);
+		}
+		var stepInterval = window.setInterval(nextStep, 1000); //1000
+
+		function chatInput() {
+			if (document.getElementById("input").value == "")
+				return;
+			if (stepNum > 0 && (document.getElementById("input").value == "bye" || document.getElementById("input").value == "Bye"))
+				stepNum = 432; //line num + 1 where "bye" is
+			addText(document.getElementById("input").value, false);
+			document.getElementById("input").value = "";
+
+			window.scrollTo(0,document.body.scrollHeight);
+		}
+
+		window.setInterval(changeDots, 500);
+		var dotCount = 0;
+		function changeDots() {
+			dotCount = (dotCount + 1) % 4;
+			var s;
+			switch(dotCount) {
+				case 0:
+					s = "&nbsp&nbsp&nbsp"; break;
+				case 1:
+					s = ".&nbsp&nbsp"; break;
+				case 2:
+					s = "..&nbsp"; break;
+				case 3:
+					s = "..."; break;
+			}
+			document.getElementById("dotdotdot-inside").innerHTML = s;
+		}
+		function hideDot() {
+			document.getElementById("dotdotdot").style.display = "none";
+		}
+
+		function addText(text, isFrom) {
+			var newElementContainer = document.createElement("div");
+			if (isFrom)
+				newElementContainer.className = "container-left";
+			else
+				newElementContainer.className = "container-right";
+
+			var newText = document.createElement("p");
+			if (isFrom)
+				newText.className = "from";
+			else
+				newText.className = "to";
+
+			newText.innerHTML = text;
+
+			if (text == "")
+				newText.style.backgroundColor = "black";
+
+			newElementContainer.appendChild(newText);
+
+			document.getElementById("add-to-here").appendChild(newElementContainer);
+
+			sentSound.play();
+		}
+
+		var newImage;
+		function addImage(link) {
+			var atBottom = ((window.innerHeight + window.scrollY) >= document.body.offsetHeight);
+
+			var newElementContainer = document.createElement("div");
+			newElementContainer.className = "container-left";
+
+			newImage = document.createElement("img");
+
+			newElementContainer.appendChild(newImage);
+
+			document.getElementById("add-to-here").appendChild(newElementContainer);
+
+			if (atBottom) {
+				newImage.addEventListener('load', (event) => {
+				    window.scrollTo(0,document.body.scrollHeight);
+				});
+			}
+
+			newImage.src = link;
+		}
+
+		// Execute a function when the user releases a key on the keyboard
+		document.getElementById("input").addEventListener("keyup", function(event) {
+		  // Number 13 is the "Enter" key on the keyboard
+		  if (event.keyCode === 13) {
+		    // Cancel the default action, if needed
+		    event.preventDefault();
+		    // Trigger the button element with a click
+		    document.getElementById("button").click();
+		  }
+		});
+
+	</script>
+
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+/* 
+ * * on the second line to indicate if the text should write itself out instantly until a user response is required
+ * > to create a label
+ * < to goto next label
+ * ) to create an answer for multiple choice question
+ * % at end of answer to make an abbreviation
+ * $ at end of answer (after abbreviation) with a key name. user must have triggered addKeyPossibility(key) in order to choose this response
+ * < below each answer choice for where to go to label (not needed if only one answer choice)
+ * # to link image
+ */
+
+var poemText = `Dr. Genevieve
+*
+George!
+I hope that you're enjoying your new massively parallel computing system that should enable you to process far more waves than ever before.
+And you were right, although a bit of an oddball, about hiding easter eggs in plain sight. Everyone is on their phone nowadays that they won't notice anything at higher res. I've been adding in a backend system to enable us to 'annotate' the internet.
+Here is an example: <a href="#" onClick="window.open('../popup_responsive/wave_test/wave_test.html','New article!','resizable,height=' + screen.height + ',width=479'); return false;">example website</a>
+What do you think?
+George?
+
+>back
+
+)Who is this?%Who
+<who
+)What did those strange symbols mean?%What
+<what
+)When did you send this?%When
+<when
+)Where am I%Where
+<where
+)How do I get out of here?$genevieve
+<next
+
+>who
+$genevieve
+I should ask you the same. What do you mean who am I, and why are you calling from George's computer?
+<back
+
+>what
+What do you mean what are they, we studied the waveforms for years. You'll probably be able to find a cipher on your computer.
+There's even a popular arcade game made about it.
+this <a href="#" onClick="window.open('../pluswave/pluswave.html','New article!','resizable,height=800,width=500'); return false;">game</a>
+$genevieve
+Whoever you are - and know you can't be George - I don't care. I want to put it all in the past.
+<back
+
+>when
+$genevieve
+I told you a few weeks ago, but you didn't respond and we assumed you were dead.
+Whoever you are - and know you can't be George - I don't care. I want to put it all in the past.
+<back
+
+>where
+$genevieve
+Probably fell into George's secret base in Area 51. My guess is you fell into some 'quicksand'
+<back
+
+>next
+You're going to have to do some digging into George's computer if you want to trigger the exit hatch.
+
+I'm still not sure who you are though, so to prove to me that you are indeed in George's secret base, text me back once you find out about our... most recent project.
+
+)Found it$found
+
+Cool`

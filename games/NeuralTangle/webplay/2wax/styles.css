@@ -1,0 +1,32 @@
+@keyframes animatedBackground {
+  from {
+    background-position: 100% 0;
+  }
+  to {
+    background-position: 0 0;
+  }
+}
+body {
+  background-image: url(canyon.JPG);
+  background-attachment: fixed;
+
+  background-size: cover;
+  background-position: bottom;
+  animation: none;
+  /*
+  Changes to:
+  background-size: auto 100%;
+  background-position: 100% 0;
+  animation: animatedBackground 10s linear infinite alternate;
+  background-image: url(canyon.JPG);
+  */
+}
+
+img {
+  width: 58%;
+  padding: 10px;
+  display: block;
+  margin: 0 auto;
+
+  cursor: pointer;
+}

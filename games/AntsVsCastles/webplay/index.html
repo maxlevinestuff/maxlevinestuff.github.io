@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<title>Ants vs. Castles</title>
+	</head>
+
+	<body onload="start()">
+
+
+
+		<div class="projectClass">  
+              <h1>Ants vs. Castles</h1>
+               <canvas id="mainCanvas" width="550" height="550" style="background-color:white">
+                   You are not seeing a canvas image.  Please use a browser that supports the tag, "canvas".
+               </canvas> 
+               <canvas id="HUDCanvas" width="500" height="50" style="background-color:white">
+                   You are not seeing a canvas image.  Please use a browser that supports the tag, "canvas".
+               </canvas>
+               <button onclick="reset()">reset</button>
+        </div>
+
+		<div class="overviewClass">
+            <br><br>
+              <h2>How to play:</h2> 
+              <p>
+              	Keep the ants at bay by building castles to defend. You can build and upgrade the castles, but this costs money. Earn money by defeating ants. Higher-level castles do more damage and have a greater firing radius. You cannot build on water. The ants get bigger and stronger over time.
+			         </p> 
+        </div>
+
+    <img id="tower" src="sprites/tower.png" alt="Tower" hidden>
+    <img id="ant" src="sprites/ant.png" alt="Ant" hidden>
+    <img id="water" src="sprites/water.png" alt="Water" hidden>
+    <img id="sand" src="sprites/sand.png" alt="Sand" hidden>
+
+		<script src="Assignment1.js"></script>
+
+	</body>
+</html>

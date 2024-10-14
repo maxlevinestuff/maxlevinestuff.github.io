@@ -1,0 +1,19 @@
+/* 
+ * * on the second line to indicate if the text should write itself out instantly until a user response is required
+ * > to create a label
+ * < to goto next label
+ * ) to create an answer for multiple choice question
+ * % at end of answer to make an abbreviation
+ * $ at end of answer (after abbreviation) with a key name. user must have triggered addKeyPossibility(key) in order to choose this response
+ * < below each answer choice for where to go to label (not needed if only one answer choice)
+ * # to link image
+ */
+
+var poemText = `Unknown Caller
+Repent!
+The end is near!
+check this out: <a href="#" onClick="window.open('https://www.amazon.com/Singularity-Near-Humans-Transcend-Biology/dp/0143037889','New article!','resizable,height=' + screen.height + ',width=479'); return false;">the end is near</a>
+Oops wrong link
+here: <a href="#" onClick="window.open('../popup_responsive/repent/repent.html','New article!','resizable,height=' + screen.height + ',width=479'); return false;">the end is near</a>
+)Thanks
+yw`
