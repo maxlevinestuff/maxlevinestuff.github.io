@@ -13,6 +13,11 @@ p, .animated-text {
     width: 400px;
 }
 
+.about {
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
 a.text-link { text-decoration: none; color:white !important; }
 a.text-link:visited { text-decoration: none; color:lightgrey !important; }
 a.text-link:hover { text-decoration: none; color:white !important; }
