@@ -45,14 +45,14 @@ a:link { text-decoration: none}
 }
 
 .game-description {
-	font-size: 27px;
+	font-size: 21px;
 
 	color: white;
 }
 
 .game-title {
 	color: white;
-	font-size: 35px;
+	font-size: 30px;
 }
 
 .os-icons {
@@ -82,9 +82,13 @@ body * {
 	padding: 5px;
 	padding-left: 20px;
 	padding-right: 20px;
-	font-size: 22px;
+	font-size: 20px;
 	color: black;
 	text-decoration: none;
+
+	display: block; /* Ensures each link takes up its own line */
+	font-weight: bold;
+
 }
 
 .sidebar-link:hover {
@@ -93,7 +97,12 @@ body * {
 	cursor: pointer;
 }
 
+.fixed-top {
+	font-size: 25px;
+	font-weight: bold;
+}
+
 p, ul {
 	color: white;
-	font-size: 50px;
+	font-size: 25px;
 }
