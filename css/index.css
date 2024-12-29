@@ -1,7 +1,8 @@
 
-p {
+p, .animated-text {
 
     font-size: 30px;
+    color: white;
 }
 
 .left-img {
