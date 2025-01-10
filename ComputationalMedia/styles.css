@@ -5,7 +5,7 @@ body {
     padding: 0;
     color: #333;
     line-height: 1.6;
-    background-image: url('imgs/black.jpg'); /* Background for the entire page */
+    background-color: black; /* Background for the entire page */
     background-size: cover; /* Make sure the background covers the entire screen */
     background-position: center;
 }
@@ -14,7 +14,7 @@ body {
 header {
     text-align: center;
     padding: 20px;
-    background-image: url('imgs/black.jpg'); /* Same background image as the sections */
+    background-color: black; /* Same background image as the sections */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -52,7 +52,7 @@ section {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     position: relative;
     z-index: 1;
-    background-image: url('imgs/black.jpg'); /* Add a background image to the content box */
+    background-color: black; /* Add a background image to the content box */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -99,18 +99,11 @@ section p {
     border-radius: 8px;
 }
 
-/* Horizontal divider */
-hr {
-    border: none;
-    border-top: 2px solid #ccc;
-    margin: 40px 0;
-}
-
 /* Footer styling */
 footer {
     text-align: center;
     padding: 10px;
-    background-image: url('imgs/black.jpg'); /* Same background image as the sections */
+    background-color: black; /* Same background image as the sections */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
