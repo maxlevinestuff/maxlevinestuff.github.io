@@ -56,11 +56,12 @@ section {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    color: white;
 }
 
 /* Backgrounds for specific projects */
 .project-1 {
-    background-image: url('imgs/bloom_background.png'); /* Section-specific background */
+    background-image: url('imgs/1bloom/background.png'); /* Section-specific background */
 }
 
 .project-2 {
