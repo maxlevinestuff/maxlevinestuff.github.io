@@ -121,3 +121,9 @@ section p {
         max-width: 1400px; /* Larger screens show bigger videos */
     }
 }
+
+a { color:cyan; !important; }
+a:visited { color:cyan !important; }
+a:hover { color:white !important; }
+a:focus { color:white !important; }
+a:hover, a:active { color:white !important }
