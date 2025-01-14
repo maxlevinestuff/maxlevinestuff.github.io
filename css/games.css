@@ -59,18 +59,7 @@ p, ul {
 
 .download {
   font-size: 24px;
-  color: white;
 }
-
-.download * {
-  color: white;
-}
-
-a.download { text-decoration: none; color:white; }
-a.download:visited { text-decoration: none; color:lightgrey; }
-a.download:hover { text-decoration: none; color:white; }
-a.download:focus { text-decoration: none; color:white; }
-a.download:hover, a:active { text-decoration: none; color:lightgrey }
 
 /*a.text-link { text-decoration: none; color:white !important; }
 a.text-link:visited { text-decoration: none; color:lightgrey !important; }

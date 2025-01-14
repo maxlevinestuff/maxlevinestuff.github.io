@@ -38,8 +38,6 @@ h2 {
 	height: 50px;
 }
 
-a:link { text-decoration: none}
-
 .os-icon {
 	width: 20px;
 }
@@ -107,8 +105,22 @@ p, ul {
 	font-size: 25px;
 }
 
-a.text-link { text-decoration: none; color:white !important; }
-a.text-link:visited { text-decoration: none; color:lightgrey !important; }
-a.text-link:hover { text-decoration: none; color:white !important; }
-a.text-link:focus { text-decoration: none; color:white !important; }
-a.text-link:hover, a:active { text-decoration: none; color:lightgrey !important }
+a.text-link { color:white; }
+a.text-link:visited { color:white; }
+a.text-link:hover { color:lightgrey; }
+a.text-link:focus { color:lightgrey; }
+a.text-link:hover, a:active { color:lightgrey }
+
+a.download { color:white; }
+a.download:visited { color:white; }
+a.download:hover { color:lightgrey; }
+a.download:focus { color:lightgrey; }
+a.download:hover, a:active { color:lightgrey }
+
+a .game-title,
+a .game-description,
+a .os-icons {
+  text-decoration: none;
+  display: inline-block; /* Break inheritance */
+}
+
