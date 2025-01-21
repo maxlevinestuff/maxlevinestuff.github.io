@@ -36,7 +36,7 @@ header p {
 section {
     padding: 0;
     width: 100%; /* Full width of the viewport */
-    background-image: url('imgs/black.jpg'); /* Background for the entire section */
+    background-color: black; /* Background for the entire section */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
