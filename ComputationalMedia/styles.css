@@ -1,6 +1,6 @@
 /* General styling */
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Helvetica", Arial, sans-serif;
     margin: 0;
     padding: 0;
     color: #333;
@@ -27,6 +27,11 @@ header h1 {
     font-size: 2.5em;
 }
 
+header p {
+    margin: 0;
+    font-size: 1.1em;
+}
+
 /* Section styling */
 section {
     padding: 0;
@@ -36,7 +41,7 @@ section {
     background-position: center;
     background-repeat: no-repeat;
     position: relative;
-    margin-bottom: 40px; /* Space between sections */
+    margin-bottom: 20px; /* Space between sections */
     display: flex;
     justify-content: center;
     align-items: center;
