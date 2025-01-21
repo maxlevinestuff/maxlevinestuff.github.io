@@ -113,18 +113,7 @@ section p {
     height: 100%;
     border: none;
     border-radius: 8px; /* Optional rounded corners */
-}
-
-@media (max-width: 768px) {
-    .video-container {
-        max-width: 90%; /* Smaller screens use more of the available width */
-    }
-}
-
-@media (min-width: 1200px) {
-    .video-container {
-        max-width: 1400px; /* Larger screens show bigger videos */
-    }
+    border: 2px solid black;
 }
 
 a { color:cyan; !important; }
