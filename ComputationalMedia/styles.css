@@ -52,7 +52,7 @@ section {
 .section-content {
     max-width: 800px; /* Increased max-width for wider content */
     width: 90%; /* Allow it to shrink for smaller viewports */
-    padding: 40px 20px;
+    padding: 25px 20px;
     background: rgba(255, 255, 255, 0.7); /* Semi-transparent background color */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     position: relative;
@@ -65,14 +65,24 @@ section {
     box-sizing: border-box; /* Ensure padding doesn't add to width */
 }
 
-/* Text and content styling */
-section h2 {
-    font-size: 1.8em;
-    margin-bottom: 10px;
+/* Styling for <h3> */
+section h3 {
+    font-size: 1em;
+    margin-top: 0; /* No space between h2 and h3 */
+    color: #ccc;
+    font-style: italic;
 }
 
+/* Styling for <h2> */
+section h2 {
+    font-size: 1.8em;
+    margin-bottom: 0; /* No space below h2 to avoid extra gap with h3 */
+}
+
+/* Styling for <p> */
 section p {
     font-size: 1.2em;
+    margin-top: 10px; /* Space between h2 or h3 and p */
 }
 
 /* Image styling */
