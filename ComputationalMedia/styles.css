@@ -88,7 +88,7 @@ section p {
 /* YouTube video styling */
 .youtube-video {
     display: block;
-    width: 100%;
+    width: calc(100% + 4px); /* Add 4px to account for the image border */
     height: auto;
     border: none;
     border-radius: 8px;
@@ -98,8 +98,8 @@ section p {
 /* Force larger YouTube video container */
 .video-container {
     position: relative;
-    width: 100%; /* Take full width of the parent */
-    max-width: 1600px; /* Set maximum size to be much larger */
+    width: calc(100% + 4px); /* Slightly larger to match image size */
+    max-width: calc(1600px + 4px); /* Adjust max width accordingly */
     margin: 20px auto; /* Center the container */
     padding-top: 56.25%; /* Maintain 16:9 aspect ratio */
 }
@@ -113,7 +113,7 @@ section p {
     height: 100%;
     border: none;
     border-radius: 8px; /* Optional rounded corners */
-    border: 2px solid black;
+    border: none;
 }
 
 a { color:cyan; !important; }
