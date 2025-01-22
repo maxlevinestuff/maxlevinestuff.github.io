@@ -41,7 +41,7 @@ section {
     background-position: center;
     background-repeat: no-repeat;
     position: relative;
-    margin-bottom: 20px; /* Space between sections */
+    margin-bottom: 16px; /* Space between sections */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -83,6 +83,7 @@ section h2 {
 section p {
     font-size: 1.2em;
     margin-top: 10px; /* Space between h2 or h3 and p */
+    margin-bottom: 10px;
 }
 
 /* Image styling */
