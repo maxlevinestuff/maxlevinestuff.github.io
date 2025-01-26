@@ -20,6 +20,9 @@ header {
     background-repeat: no-repeat;
     color: white; /* Ensure text is readable */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Optional shadow for separation */
+
+    padding-top: 16px;
+    padding-bottom: 32px;
 }
 
 header h1 {
@@ -30,6 +33,11 @@ header h1 {
 header p {
     margin: 0;
     font-size: 1.1em;
+}
+
+.bottom-header {
+    padding-top: 32px;
+    padding-bottom: 16px;
 }
 
 /* Section styling */
@@ -63,6 +71,9 @@ section {
     background-repeat: no-repeat;
     color: white;
     box-sizing: border-box; /* Ensure padding doesn't add to width */
+
+    padding-top: 32px; /* space between sections */
+    padding-bottom: 32px;
 }
 
 /* Styling for <h3> */
@@ -77,6 +88,7 @@ section h3 {
 section h2 {
     font-size: 1.8em;
     margin-bottom: 0; /* No space below h2 to avoid extra gap with h3 */
+    margin-top: 0;
 }
 
 /* Styling for <p> */
@@ -91,7 +103,7 @@ section p {
     display: block;
     width: 100%;
     height: auto; /* Let the image scale naturally */
-    margin: 20px 0;
+    margin: 16px 0;
     border: 2px solid #ccc;
     border-radius: 8px;
 }
@@ -111,7 +123,7 @@ section p {
     position: relative;
     width: calc(100% + 4px); /* Slightly larger to match image size */
     max-width: calc(1600px + 4px); /* Adjust max width accordingly */
-    margin: 20px auto; /* Center the container */
+    margin: 16px auto; /* Center the container */
     padding-top: 56.25%; /* Maintain 16:9 aspect ratio */
 }
 
