@@ -57,6 +57,10 @@ h2 {
 	padding-bottom: 30px;
 }
 
+.text-center > a {
+	text-decoration: none;
+}
+
 html,body {
     margin:0;
     padding:0;
@@ -121,6 +125,6 @@ a .game-title,
 a .game-description,
 a .os-icons {
   text-decoration: none;
-  display: inline-block; /* Break inheritance */
+	display: block;
 }
 
